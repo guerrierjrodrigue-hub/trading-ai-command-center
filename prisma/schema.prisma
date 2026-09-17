@@ -1,0 +1,400 @@
+// Trading AI Command Center — data model
+// PostgreSQL + Prisma. Everything is scoped by userId so the app is
+// multi-user ready even though the MVP is personal.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum AssetClass {
+  CRYPTO
+  STOCK
+  ETF
+  FOREX
+}
+
+enum OrderSide {
+  BUY
+  SELL
+}
+
+enum OrderType {
+  MARKET
+  LIMIT
+}
+
+enum OrderStatus {
+  FILLED
+  PENDING
+  CANCELLED
+  REJECTED
+}
+
+enum PositionSide {
+  LONG
+  SHORT
+}
+
+enum PositionStatus {
+  OPEN
+  CLOSED
+}
+
+enum AlertMetric {
+  PRICE
+  RSI
+  VOLUME
+  AI_SCORE
+  EMA_CROSS
+}
+
+enum AlertOperator {
+  GT
+  LT
+  CROSS_ABOVE
+  CROSS_BELOW
+}
+
+enum AlertStatus {
+  ACTIVE
+  TRIGGERED
+  DISABLED
+}
+
+enum AiKind {
+  ANALYZE
+  COMPARE
+  EXPLAIN
+  JOURNAL
+  BRIEF
+}
+
+// ---------------------------------------------------------------------------
+// Core
+// ---------------------------------------------------------------------------
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  role         Role     @default(USER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  setting       Setting?
+  portfolios    Portfolio[]
+  watchlists    Watchlist[]
+  journalEntries JournalEntry[]
+  alerts        Alert[]
+  strategies    Strategy[]
+  backtests     Backtest[]
+  aiAnalyses    AiAnalysis[]
+  botConfig     BotConfig?
+  botLogs       BotLog[]
+}
+
+model Setting {
+  id                       String  @id @default(cuid())
+  userId                   String  @unique
+  user                     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  startingCapital          Float   @default(10000)
+  currency                 String  @default("USD")
+  // Risk parameters
+  riskPerTradePct          Float   @default(1)   // % of capital risked per trade
+  maxDailyLossPct          Float   @default(3)   // % max loss per day
+  maxOpenPositions         Int     @default(5)
+  maxPortfolioExposurePct  Float   @default(60)  // % of capital deployable
+  feeBps                   Int     @default(10)  // simulated fee, basis points
+  telegramChatId           String?               // where to deliver Telegram alerts
+  theme                    String  @default("dark")
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @updatedAt
+}
+
+model Asset {
+  id            String     @id @default(cuid())
+  symbol        String     @unique
+  name          String
+  assetClass    AssetClass
+  exchange      String?
+  quoteCurrency String     @default("USD")
+  createdAt     DateTime   @default(now())
+
+  watchlistItems WatchlistItem[]
+  positions      Position[]
+  orders         Order[]
+  trades         Trade[]
+}
+
+// ---------------------------------------------------------------------------
+// Portfolio / paper trading
+// ---------------------------------------------------------------------------
+
+model Portfolio {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name            String   @default("Paper Portfolio")
+  currency        String   @default("USD")
+  startingCapital Float    @default(10000)
+  cash            Float    @default(10000) // available (uninvested) capital
+  isPaper         Boolean  @default(true)  // MVP is always true — no real money
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  positions Position[]
+  orders    Order[]
+  trades    Trade[]
+
+  @@index([userId])
+}
+
+model Position {
+  id           String         @id @default(cuid())
+  portfolioId  String
+  portfolio    Portfolio      @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+  assetId      String
+  asset        Asset          @relation(fields: [assetId], references: [id])
+  side         PositionSide   @default(LONG)
+  status       PositionStatus @default(OPEN)
+  quantity     Float
+  entryPrice   Float
+  stopLoss     Float?
+  takeProfit   Float?
+  feesPaid     Float          @default(0)
+  exitPrice    Float?
+  realizedPnl  Float?
+  openedBy     String         @default("USER") // USER | BOT
+  openedAt     DateTime       @default(now())
+  closedAt     DateTime?
+
+  orders Order[]
+  trade  Trade?
+
+  @@index([portfolioId, status])
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  portfolioId String
+  portfolio   Portfolio   @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+  assetId     String
+  asset       Asset       @relation(fields: [assetId], references: [id])
+  positionId  String?
+  position    Position?   @relation(fields: [positionId], references: [id], onDelete: SetNull)
+  side        OrderSide
+  type        OrderType   @default(MARKET)
+  status      OrderStatus @default(FILLED)
+  quantity    Float
+  price       Float
+  fee         Float       @default(0)
+  reason      String?
+  createdAt   DateTime    @default(now())
+
+  @@index([portfolioId])
+}
+
+// Realized round-trip record, created when a position is closed.
+model Trade {
+  id          String    @id @default(cuid())
+  portfolioId String
+  portfolio   Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+  assetId     String
+  asset       Asset     @relation(fields: [assetId], references: [id])
+  positionId  String    @unique
+  position    Position  @relation(fields: [positionId], references: [id], onDelete: Cascade)
+  side        PositionSide
+  quantity    Float
+  entryPrice  Float
+  exitPrice   Float
+  fees        Float     @default(0)
+  pnl         Float
+  pnlPct      Float
+  openedAt    DateTime
+  closedAt    DateTime  @default(now())
+
+  @@index([portfolioId])
+}
+
+// ---------------------------------------------------------------------------
+// Watchlist
+// ---------------------------------------------------------------------------
+
+model Watchlist {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String   @default("My Watchlist")
+  createdAt DateTime @default(now())
+
+  items WatchlistItem[]
+
+  @@index([userId])
+}
+
+model WatchlistItem {
+  id          String   @id @default(cuid())
+  watchlistId String
+  watchlist   Watchlist @relation(fields: [watchlistId], references: [id], onDelete: Cascade)
+  assetId     String
+  asset       Asset    @relation(fields: [assetId], references: [id])
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  @@unique([watchlistId, assetId])
+  @@index([watchlistId])
+}
+
+// ---------------------------------------------------------------------------
+// Journal
+// ---------------------------------------------------------------------------
+
+model JournalEntry {
+  id            String       @id @default(cuid())
+  userId        String
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  symbol        String
+  strategy      String?
+  side          PositionSide @default(LONG)
+  entryPrice    Float?
+  stopLoss      Float?
+  takeProfit    Float?
+  exitPrice     Float?
+  result        String?      // WIN | LOSS | BREAKEVEN | OPEN
+  pnl           Float?
+  emotion       String?      // e.g. calm | fomo | fear | greed | disciplined
+  reason        String?      // why the entry
+  screenshotUrl String?
+  notes         String?
+  tradedAt      DateTime     @default(now())
+  createdAt     DateTime     @default(now())
+
+  @@index([userId])
+}
+
+// ---------------------------------------------------------------------------
+// Alerts
+// ---------------------------------------------------------------------------
+
+model Alert {
+  id             String        @id @default(cuid())
+  userId         String
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  symbol         String
+  metric         AlertMetric   @default(PRICE)
+  operator       AlertOperator @default(GT)
+  threshold      Float
+  status         AlertStatus   @default(ACTIVE)
+  channels       String[]      @default([]) // browser | email | telegram | discord (delivery = phase 2)
+  note           String?
+  lastTriggeredAt DateTime?
+  createdAt      DateTime      @default(now())
+
+  @@index([userId, status])
+}
+
+// ---------------------------------------------------------------------------
+// Strategies / backtests (schema present; simple version in phase 2)
+// ---------------------------------------------------------------------------
+
+model Strategy {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  type      String   // EMA_CROSS | RSI | MACD | BREAKOUT | TREND_FOLLOWING
+  params    Json     @default("{}")
+  createdAt DateTime @default(now())
+
+  backtests Backtest[]
+
+  @@index([userId])
+}
+
+model Backtest {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  strategyId      String?
+  strategy        Strategy? @relation(fields: [strategyId], references: [id], onDelete: SetNull)
+  symbol          String
+  timeframe       String
+  startDate       DateTime
+  endDate         DateTime
+  startingCapital Float     @default(10000)
+  result          Json      @default("{}") // trades, winRate, profitFactor, maxDrawdown, totalReturn...
+  createdAt       DateTime  @default(now())
+
+  @@index([userId])
+}
+
+// ---------------------------------------------------------------------------
+// AI analyses (persisted for history + future Market Brief cron)
+// ---------------------------------------------------------------------------
+
+model AiAnalysis {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kind            AiKind   @default(ANALYZE)
+  symbol          String?
+  provider        String
+  model           String?
+  prompt          String
+  response        Json     @default("{}")
+  confidenceScore Int?
+  createdAt       DateTime @default(now())
+
+  @@index([userId, kind])
+}
+
+// ---------------------------------------------------------------------------
+// Trading bot (Auto-Pilot) — PAPER only
+// ---------------------------------------------------------------------------
+
+model BotConfig {
+  id               String   @id @default(cuid())
+  userId           String   @unique
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  enabled          Boolean  @default(false)
+  mode             String   @default("MANUAL") // MANUAL | AUTO
+  riskProfile      String   @default("BALANCED") // CONSERVATIVE | BALANCED | AGGRESSIVE
+  strategy         String   @default("EMA_CROSS") // EMA_CROSS|RSI|MACD|BREAKOUT|TREND_FOLLOWING
+  timeframe        String   @default("1D")
+  symbols          String[] @default([]) // empty => use the user's watchlist
+  riskPerTradePct  Float    @default(1)
+  stopPct          Float    @default(5)   // stop distance from entry, %
+  takeProfitRR     Float    @default(2)   // reward:risk multiple for TP
+  maxOpenPositions Int      @default(3)
+  intervalMinutes  Int      @default(15)
+  lastRunAt        DateTime?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model BotLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action    String   // OPEN | CLOSE | HOLD | SKIP | INFO | ERROR
+  symbol    String?
+  message   String
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+}

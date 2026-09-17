@@ -1,0 +1,1018 @@
+{
+"meta": {
+"source": "Apex Paragon — Atlas Edition (manuel de trading, FR)",
+"pages": 436,
+"chunks": 144,
+"skippedBlankPages": 292
+},
+"chunks": [
+{
+"id": "p2",
+"page": 2,
+"section": "INTRODUCTION",
+"title": "Avertissement",
+"text": "INTRODUCTION\nAvertissement\nLe contenu a été préparé par Apex Paragon à des fins d'information générale et éducative uniquement et ne constitue pas (et ne\npeut être interprété ou invoqué comme) un conseil personnel ni une offre d'achat / vente / abonnement à l'un des produits\nmentionnés dans le présent document. Aucun objectif d'investissement, situation financière ou besoin d'aucune personne n'a été\npris en considération dans la préparation ou la livraison du Contenu.\nLes produits financiers sont complexes, comportent un risque de perte, peuvent monter et descendre et sont influencés par une\ngamme de facteurs économiques et de marché, et vous devriez toujours obtenir des conseils professionnels pour vous assurer que\nla négociation ou l'investissement dans ces produits est adapté à votre situation et vous obtenez, lisez et comprenez tout\ndocument d'offre applicable.\nLa négociation de devises sur marge comporte un niveau de risque élevé et peut ne pas convenir à tous les investisseurs. Le niveau\nélevé de levier peut être contre vous aussi bien que pour vous. Avant de décider d'investir dans des devises, vous devez examiner\nattentivement vos objectifs d'investissement, votre niveau d'expérience et votre appétit pour le risque.\nLes décisions d'acheter, de vendre, de détenir ou de négocier des titres et autres investissements comportent des risques et sont\nmieux prises sur la base des conseils de professionnels financiers qualifiés. Toute opération sur titres ou autres investissements\ncomporte un risque de pertes importantes. La pratique du «Day Trading» comporte des risques particulièrement élevés et peut\nvous faire perdre des sommes importantes. Avant d'entreprendre un programme de trading, vous devriez consulter un\nprofessionnel financier qualifié. Veuillez examiner attentivement si une telle opération vous convient compte tenu de votre\nsituation financière et de votre capacité à supporter des risques financiers.\nAucune information ou opinion contenue dans ce livre ne doit être considérée comme une sollicitation ou une offre d'achat ou de\nvente de devises, actions ou autres instruments ou services financiers."
+},
+{
+"id": "p3",
+"page": 3,
+"section": "INTRODUCTION",
+"title": "Qu'est-ce que le Forex?",
+"text": "INTRODUCTION\nQu'est-ce que le Forex?\nLe Forex est le marché sur lequel différentes devises nationales sont\néchangées. Le marché des changes est le marché le plus vaste et le\nplus liquide au monde.\nVolume quotidien du marché des devises: 5,3 milliards de dollars ou 5 300 000\n000 000 $\nVolume journalier de la Bourse de New York: 22,4 milliards de dollars ou 22 400\n000 000 $"
+},
+{
+"id": "p7",
+"page": 7,
+"section": "INTRODUCTION",
+"title": "Broker",
+"text": "INTRODUCTION\nBroker:\nUn broker fonctionne comme un intermédiaire entre vous et le liquidity\nprovider (banques). Ils utilisent plusieurs banques pour la tarification, et\nils vous offriront la meilleure.\nComment choisir le bon broker:\n1. Assurez-vous de déposer votre argent dans un compte ségrégué.\n2. Le courtier doit avoir une réglementation dans son pays d’origine.\n3. Les spreads et les commissions doivent être compétitifs."
+},
+{
+"id": "p9",
+"page": 9,
+"section": "INTRODUCTION",
+"title": "Paires de devises",
+"text": "INTRODUCTION\nPaires de devises:\n3 types:\nPaires Majeures (EUR/USD) (GBP/USD) (USD/JPY) (...):\nElles contiennent tous l'USD en eux. Ce sont les paires les plus échangées sur le marché.\nPaires Mineures (GBP/JPY) (EUR/JPY) (GBP/AUD) (...):\nElles sont une fusion de 2 paires majeures, appelées aussi crosses.\nExemple: EUR/USD + USD/JPY = EUR/JPY\nPaires Exotiques (USD/ZAR) (USD/HKD) (USD/PLN) (...):\nElles sont composés d'une devise majeure (USD) et d'une autre devise d'une économie émergente."
+},
+{
+"id": "p11",
+"page": 11,
+"section": "INTRODUCTION",
+"title": "Pip",
+"text": "INTRODUCTION\nPip:\nUn pip est la mesure du mouvement des prix d'une paire de devises. S'il\ny a 5 décimales dans une devise, le pip est la 4ème. S'il y a 3 décimales,\nle pip est la 2ème.\nVotre but est de faire autant de pips que possible."
+},
+{
+"id": "p13",
+"page": 13,
+"section": "INTRODUCTION",
+"title": "Lots",
+"text": "INTRODUCTION\nLots:\nLe marché Forex est négocié en quantités spécifiques appelées lots. Ils\nreprésentent le nombre d'unités monétaires que vous achetez ou\nvendez.\nLot standard (1 lot): 100 000 unités de la monnaie ou 10 $ / pip\nMini Lot (0,1 lot): 10 000 unités de la monnaie ou 1 $ / pip\nMicro Lot (0.01 Lot): 1000 unités de la devise ou 0.10 $ / pip"
+},
+{
+"id": "p15",
+"page": 15,
+"section": "INTRODUCTION",
+"title": "Effet de levier",
+"text": "INTRODUCTION\nEffet de levier:\nL'effet de levier consiste à emprunter une certaine somme d'argent\nauprès du courtier afin que vous puissiez ouvrir des positions plus\nimportantes sur le marché.\nExemple d’effet de levier si vous avez un compte de 10 000 $:\n50: 1 --------------> 10 000 $ x 50 = 500 000 $ de pouvoir d'achat = Le lot maximum est 5\n100: 1 --------------> 10 000 $ x 100 = 1 000 000 $ de pouvoir d'achat = Le lot maximum est 10\n200: 1 --------------> 10 000 $ x 200 = 2 000 000 $ de pouvoir d'achat = Le lot maximum est 20\n500: 1 --------------> 10 000 $ x 500 = 5 000 000 $ de pouvoir d'achat = Le lot maximum est 50"
+},
+{
+"id": "p17",
+"page": 17,
+"section": "INTRODUCTION",
+"title": "Achat/Vente",
+"text": "INTRODUCTION\nAchat/Vente:\nLorsque nous achetons une paire de devises,\ncela signifie que nous achetons la devise de\nbase en vendant la devise de cotation.\nLorsque nous vendons une paire de devises,\ncela signifie que nous vendons la devise de\nbase en achetant la devise de cotation.\nExemple:\nNous achetons EUR/JPY, cela signifie que nous achetons EUR et vendons JPY\nou\nNous vendons GBP/NZD, cela signifie que nous vendons GBP et achetons NZD"
+},
+{
+"id": "p19",
+"page": 19,
+"section": "INTRODUCTION",
+"title": "Ordres limites",
+"text": "INTRODUCTION\nOrdres limites:\nUn ordre limité est un ordre d'achat ou de vente à un prix déterminé.\nTrès utile lorsque vous n'êtes pas devant l'écran."
+},
+{
+"id": "p23",
+"page": 23,
+"section": "",
+"title": "Avant de commencer...très important",
+"text": "Avant de commencer...très important:\nIl vous faudra habituellement 1 à 10 jours\npour passer au travers du plan de trading\nau complet et trouver la bonne opportunité,\nmais le trade peut durer plusieurs jours,\nsemaines, mois.\nVous devez passer par les 4 piliers sur\nchaque trade que vous faites. Ne sautez pas\nle plan, des erreurs se produisent lorsque\nvous le faites. L'exception est lorsqu'il y a un\névénement d'actualité majeur et que vous\ndevez réagir sur le moment (uniquement\navec l'expérience)\nIl n’existe pas de trade parfait, les conditions\ndu marché changent tout le temps. Vous\ndevez être prêt à faire preuve de souplesse\net à adapter votre plan au marché. Cela\nviendra avec l'expérience"
+},
+{
+"id": "p25",
+"page": 25,
+"section": "",
+"title": "1er Pilier - Analyse fondamentale (40%)",
+"text": "1er Pilier - Analyse fondamentale (40%)\nL'analyse fondamentale est l'étude de\nl'état général d'une certaine économie.\nNous examinons également les nouvelles\nsociales et politiques qui pourraient\ninfluencer la monnaie.\n1. Vérifier le calendrier économique\n2. Étudier et comprendre les données économiques\n3. Lire, analyser, rechercher les différents sites de headlines\n4. Comprendre la macroéconomie des pays avec une devise mineure\n5. Créez votre idée fondamentale (le plus important)\n6. Mettez à jour votre idée fondamentale tous les deux jours ou lorsqu'un événement\nd'actualité majeur se produit (ne jamais négliger cela)"
+},
+{
+"id": "p27",
+"page": 27,
+"section": "",
+"title": "2ème Pilier - Sentiment du marché (25%)",
+"text": "2ème Pilier - Sentiment du marché (25%)\nC'est ainsi que les institutions financières\net les retail traders se positionnent sur le\nmarché. Habituellement, ils vont être l'un\ncontre l'autre.\nPourquoi 90% des retail traders perdent plus de 90% de leur argent en moins de 90 jours?\nQuelle est la différence entre un retail trader et un trader institutionnel?\nQuelle est la relation entre les retail traders et les institutions financières?\nComment fonctionne le forex? Quelles sont les règles du jeu? Quel est le mécanisme de\nbase immuable du marché?\nComment devriez-vous vous positionner sur le marché?\nQu'est-ce qui différencie un gagnant d'un perdant?"
+},
+{
+"id": "p29",
+"page": 29,
+"section": "",
+"title": "3ème Pilier - Price Action (10%)",
+"text": "3ème Pilier - Price Action (10%)\nLe price action est une technique de\ntrading qui vous permet de comprendre\noù le prix veut aller en étudiant les\nchandeliers.\nComment se positionnent les grandes institutions financières?\nQue font les acheteurs et les vendeurs?\nQuelle est l'histoire derrière les charts?\nVoulons-nous briser ou rebondir sur/le (élément de structure)?\nDevrais-je attendre la confirmation du chandelier (candlestick pattern)?"
+},
+{
+"id": "p31",
+"page": 31,
+"section": "",
+"title": "4ème Pilier - Analyse Technique (25%) (1/4)",
+"text": "4ème Pilier - Analyse Technique (25%) (1/4)\nL'analyse technique consiste à trouver le\nmeilleur prix pour entrer dans le trade,\nexécuter votre idée fondamentale et\noptimiser votre transaction. Toujours la\ndernière étape.\nA.Market Structure:\nSupport et résistance\nAccumulation et distribution\nKey levels (D1, H4)\nNiveaux Psychologiques"
+},
+{
+"id": "p33",
+"page": 33,
+"section": "",
+"title": "4ème Pilier - Analyse Technique (25%) (2/4)",
+"text": "4ème Pilier - Analyse Technique (25%) (2/4)\nL'analyse technique consiste à trouver le\nmeilleur prix pour entrer dans le trade,\nexécuter votre idée fondamentale et\noptimiser votre transaction. Toujours la\ndernière étape.\nB.Market Trend:\nIdentification de la tendance en D1, H4, H1\nPont entre l'analyse technique et l'analyse fondamentale (le plus important)\nTrendline\nCounter-trendline\nKey level trendline\nChannel\nCounter-Channel\nBreak-Hook-Go\nBig Bounce\nChart patterns\nTendance Institutionnelle\nHeartline\nElliot Waves"
+},
+{
+"id": "p35",
+"page": 35,
+"section": "",
+"title": "4ème Pilier - Analyse Technique (25%) (3/4)",
+"text": "4ème Pilier - Analyse Technique (25%) (3/4)\nL'analyse technique consiste à trouver le\nmeilleur prix pour entrer dans le trade,\nexécuter votre idée fondamentale et\noptimiser votre transaction. Toujours la\ndernière étape.\nC.Fibonacci:\nNiveaux de retracement et d'extension (jambe d'impulsion et de correction)\nEntrée et sortie du trade\nTake profit\nStop loss\nConfluence de Fibonacci avec des éléments de structure"
+},
+{
+"id": "p37",
+"page": 37,
+"section": "",
+"title": "4ème Pilier - Analyse Technique (25%) (4/4)",
+"text": "4ème Pilier - Analyse Technique (25%) (4/4)\nL'analyse technique consiste à trouver le\nmeilleur prix pour entrer dans le trade,\nexécuter votre idée fondamentale et\noptimiser votre transaction. Toujours la\ndernière étape.\nD.Divergence:\nRSI\nMACD\nMoving average (50, 100, 200)\nConvergence vs divergence"
+},
+{
+"id": "p39",
+"page": 39,
+"section": "",
+"title": "Avertissement... très important",
+"text": "Avertissement... très important:\nL'importance de chaque section du plan\nde trading variera en fonction des\nconditions du marché. Le plan n’est pas\nrigide, vous devez l’ajuster et le faire\nlorsque les conditions changent.\nExemple:\nIl ne se passe rien fondamentalement et/ou il est\ntrès difficile de créer une idée fondamentale car\nles informations que vous lisez sont\ncontradictoires.\nSolution:\nLa partie fondamentale de votre plan de trading\nsera moins importante et vous devriez mettre\ndavantage l'accent sur l'analyse technique.\nFondamentale: (40% -> 10%)\nTechnique: (25% -> 55%)\nCeci est également valable dans l'autre sens et\napplicable à chaque section du plan."
+},
+{
+"id": "p43",
+"page": 43,
+"section": "",
+"title": "Règlements de Trading (1/2)",
+"text": "Règlements de Trading (1/2)\nSi vous suivez scrupuleusement cette liste\nde règles, vous ne devriez jamais être\ndans une position où vous perdez la\nmajorité/tout votre capital.\n● Risquez toujours entre 1 et 3% de votre compte par transaction. La recommandation\nest de 2%.\n● Assurez-vous d'avoir toujours un risque/récompense minimum de 2:1 ou plus.\n● Ne faites jamais plus de 4 trade par semaine (Idées de trading).\n● Ne jamais avoir plus de 2 trades en cours d'exécution en même temps.\n● Concentrez-vous sur la qualité et non sur la quantité, ne prenez pas d'opportunités\npartielles sur le marché. S'il n'y en a pas, ne tradez pas du tout."
+},
+{
+"id": "p45",
+"page": 45,
+"section": "",
+"title": "Règlements de Trading (2/2)",
+"text": "Règlements de Trading (2/2)\nSi vous suivez scrupuleusement cette liste\nde règles, vous ne devriez jamais être\ndans une position où vous perdez la\nmajorité/tout votre capital.\n● Ne re-rentrez pas sur un trade qui s’est avéré perdant.\n● N'ajoutez pas un trade en cours perdant (peut être autorisé si vous avez beaucoup\nd'expérience).\n● Assurez-vous toujours que votre journal de trading est à jour, ne soyez pas\nparesseux.\n● Si vous perdez 2 transactions consécutives sur votre compte réel, vous devez\nretourner sur votre compte démo et gagner 2 transactions consécutives pour pouvoir\nrevenir sur votre compte réel."
+},
+{
+"id": "p49",
+"page": 49,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nLe calendrier économique couvre tous les événements fondamentaux\nimportants et les communiqués qui affectent le marché des changes.\nVous pouvez voir comment se porte un secteur particulier de\nl'économie d’un pays. Cette information vous aidera à structurer votre\nidée fondamentale.\nSites Web que j'utilise:\nMyFxbook (préféré)\nFxStreet\nDailyFx"
+},
+{
+"id": "p51",
+"page": 51,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Paramètres",
+"text": "ANALYSE FONDAMENTALE\nParamètres:\nAjoutez toutes les devises majeures et mineures.\nSélectionnez uniquement les impacts moyen et\nCalendrier Économique (30%) élevé (jaune et rouge)."
+},
+{
+"id": "p53",
+"page": 53,
+"section": "",
+"title": "ANALYSE FONDAMENTALE Previous: Résultat précédent, les dernières",
+"text": "ANALYSE FONDAMENTALE Previous: Résultat précédent, les dernières\ndonnées (généralement le mois dernier).\nConsensus: Accord général du marché, prévision\ndes analystes.\nCalendrier Économique (30%) Actual: Nombre réel publié à la date et à l’heure\nannoncées."
+},
+{
+"id": "p55",
+"page": 55,
+"section": "",
+"title": "ANALYSE FONDAMENTALE Cliquez sur la nouvelle pour avoir une",
+"text": "ANALYSE FONDAMENTALE Cliquez sur la nouvelle pour avoir une\ndescription détaillée et le graphique\ndu calendrier historique.\nPoint violet: consensus\nCalendrier Économique (30%) Point bleu: actual"
+},
+{
+"id": "p57",
+"page": 57,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nLorsque le nombre réel (actual) sera publié, le marché réagira en deux\nparties (chacune ayant une personnalité complètement différente).\nPartie 1: La tempête\nDurée: dès que l'actuel est publié à quelques minutes plus tard (cela peut aller de 5 à 30\nminutes, selon les nouvelles).\nCaractéristiques: Le marché est impulsif, émotionnel et sous l’effet de la surprise.\nQui trade?: Des robots automatiques d’institutions financières/fonds spéculatifs et des retail\ntraders débutants."
+},
+{
+"id": "p59",
+"page": 59,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nComment pouvons-nous comprendre la réaction du marché à la\npremière partie?\nNous nous poserons 3 questions:\n1. Le réel (actual) est-il une surprise ou non par rapport au consensus?\n2. Si c’est une surprise, la surprise est-elle positive ou négative?\n3. Sur une échelle de 1 à 3, dans quelle mesure le réel (actual) est-il étonnamment positif ou\nnégatif?"
+},
+{
+"id": "p61",
+"page": 61,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nSur une échelle de 1 à 3, dans quelle mesure le réel (actual) est-il\nétonnamment positif ou négatif?\nNous allons donner une note selon 3 critères:\n1. Nous examinerons l’importance de l’actualité (impact moyen ou élevé).\n2. Regardez la différence de nombre entre le réel et le consensus, est-ce une différence\nlégère ou grande.\n3. Vérifiez et comparez les données historiques des 3-6 derniers mois sur le graphique du\ncalendrier économique pour confirmer le critère #2."
+},
+{
+"id": "p63",
+"page": 63,
+"section": "",
+"title": "ANALYSE FONDAMENTALE Jun: Consensus (3.9) Actual (3.8)",
+"text": "ANALYSE FONDAMENTALE Jun: Consensus (3.9) Actual (3.8)\nMay: Consensus (4.0) Actual (3.9)\nApr: Consensus (4.0) Actual (4.1)\nMar: Consensus (4.0) Actual (4.1)\nCalendrier Économique (30%)"
+},
+{
+"id": "p65",
+"page": 65,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nLorsque le nombre réel (actual) sera publié, le marché réagira en deux\nparties (chacune ayant une personnalité complètement différente).\nPartie 2: Le calme\nDurée: Juste après la fin de la première partie (La Tempête) jusqu'à quelques heures après.\nCaractéristiques: Le marché est rationnel, réfléchi et planifié.\nQui trade?: Traders d'institutions financières/fonds spéculatifs et des retail traders\nprofessionnels."
+},
+{
+"id": "p67",
+"page": 67,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nComment pouvons-nous comprendre la réaction du marché à la\ndeuxième partie?\nNous nous poserons 3 questions:\n1. Le réel (actual) par rapport au précédent (previous) est-il positif ou négatif?\n2. Arrivons-nous à la même conclusion que la première réaction dans la deuxième réaction\n(sont-ils tous les deux positifs/négatifs ou opposés)?\n3. Comment les institutions financières vont-elles interpréter la situation et agir? 3\npossibilités"
+},
+{
+"id": "p69",
+"page": 69,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nComment les institutions financières vont-elles interpréter la situation et\nagir? 3 possibilités\n1. Si nous arrivons à la même conclusion pour la partie 2 que pour la partie 1, nous aurons\nune continuation du premier mouvement.\n2. S'il existe une légère différence entre la partie 2 et la partie 1, le marché deviendra\nincertain et le prix commencera à se consolider.\n3. Si la partie 2 est complètement à l'opposé de la partie 1, le marché va inverser le premier\nmouvement."
+},
+{
+"id": "p71",
+"page": 71,
+"section": "",
+"title": "ANALYSE FONDAMENTALE Jun: Consensus (3.9) Actual (3.8)",
+"text": "ANALYSE FONDAMENTALE Jun: Consensus (3.9) Actual (3.8)\nMay: Consensus (4.0) Actual (3.9)\nApr: Consensus (4.0) Actual (4.1)\nMar: Consensus (4.0) Actual (4.1)\nCalendrier Économique (30%)"
+},
+{
+"id": "p73",
+"page": 73,
+"section": "",
+"title": "ANALYSE FONDAMENTALE Jun: Consensus (188K) Actual (223K)",
+"text": "ANALYSE FONDAMENTALE Jun: Consensus (188K) Actual (223K)\nMay: Consensus (192K) Actual (164K)\nApr: Consensus (193K) Actual (103K)\nMar: Consensus (200) Actual (313K)\nCalendrier Économique (30%)"
+},
+{
+"id": "p75",
+"page": 75,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nUne fois que cela sera maîtrisé, nous allons utiliser le calendrier\néconomique pour 3 raisons:\n1. Si les nouvelles sont vraiment, vraiment, vraiment importantes et que vous\navez de l'expérience, vous serez en mesure de trader la deuxième réaction.\n2. En examinant les données économiques, nous accumulons des informations\nqui nous aideront à formuler notre idée fondamentale par la suite (Le plus\nimportant).\n3. En regardant le calendrier économique, nous avons une idée de\nl’importance des différentes nouvelles et nous pouvons protéger/ajuster\nnos transactions actuelles (sortir du trade ou prendre des profits partiels)."
+},
+{
+"id": "p77",
+"page": 77,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● AiG Performance of Mfg Index - (Australia) Australian Industry Group surveys 200 manufacturers on their assessment of the business situation in the country. This includes\nemployment, production, orders, prices, inventories, and short-term planning. >50 means bullish for AUD, result <50 means Bearish\n● Caixin Manufacturing PMI - (China) Questionnaires are sent to Purchasing Managers in 400+ private manufacturing sector companies. This number is a result of their replies.\n● Manufacturing Purchasing Managers Index(MoM) - (Sweden) Captures business conditions in mfg sector because mfg sector dominates a large part of total GDP. >50 = Bullish,\nand <50 = Bearish\n● Purchasing Manager Index - (Poland) captures biz conditions in mfg sector. >50 means bullish, and <50 means bearish\n● Unemployment - (Austria) number of unemployed workers in the country. The higher the number shows worsening of labor market which makes economy weak. A decrease in\nnumber = bullish for the EURO, and increase is bearish (negative)\n● Markit Manufacturing PMI - Released by Markit Economics for many countries in Europe. PMI = Purchasing Managers Index. Captures business conditions in mfg sector. >50 =\nbullish, <50 = bearish\n● Unemployment Change - survey released by govt. Show how many unemployed workers added during the past month. It’s the leading indicator. Negative number = expansion in\nworkforce. Increase in number = negative (bearish). Decrease in number = bullish (positive)\n● Unemployment Rate s.a. (seasonally adjusted) - (Germany) Shows percent of unemployed people in Germany, using seasonally adjusted data (seasonally adjusted means\nremoving predictable seasonal job data). Decrease = positive (bullish), Increase = negative (bearish)\n● PMI Construction - (UK) Shows business conditions in the construction sector. This sector does not influence GDP as much as the manufacturing sector does. >50 bullish for GBP.\n<50 Bearish\n● Construction Spending - (US) Measures total amount spent in US on all types of construction. The residential construction component is useful for predicting future national new\nhome sales and mortgage origination volume. High = bullish. Low = Bearish\n● ISM Manufacturing PMI - (US) Institute for Supply Management (ISM) index shows biz conditions in the US mfg sector. It is significant indicator of overall economic condition in\nUS. >50 is bullish. <50 is bearish.\n● ISM Prices Paid - (US) Institute of Supply Management shows business conditions in manufacturing sector, but it considers the expectations for future production, new ordres,\ninventories, employment and deliveries. This representants business sentiment regarding future inflation. A high reading = positive. Low reading = negative."
+},
+{
+"id": "p79",
+"page": 79,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● FOMC Minutes - (US) FOMC means Federal Open Market Committee. This committee does 8 meetings per year and reviews economic and financial conditions. They also\ndetermine current stance of monetary policy and look at the risks to its long-term goals of price stability and economic growth. This is a clear guide to future US interest rate\npolicy. *why doesn’t it have any numbers?\n● Caixin China Services PMI - 400 purchasing executives from service sector companies reply to questionnaires. This panel is selected to accurately replicate the true structure of\nthe services economy.\n● Markit Services PMI - Same thing is Markit Manufacturing PMI, but it’s in the Services sector. >50 = bullish. <50 = bearish. For Germany, it's not as impactful on GDP as\nmanufacturing sector.\n● Markit PMI Composite - based on a large number of business executives in mfg and service industry. Released on the 3rd working day of each month. Weighted response based\non size of company and its contribution to total mfg or services output. 50% = no change since prev month. >50 = improvement/increase. <50 = decrease/contraction\n● Consumer Credit - (UK) Released by Bank of England. Shows how much money people borrowed last month. Shows if people can afford large expenses which can fuel economic\ngrowth. A high figure can also show economy is overheating as people get loans to live above their means. High reading = positive, low reading = negative.\n● Mortgage Approvals - (UK) Number of various mortgage approvals. Leading indicator of housing market. High = good for GBP. Low = bad for GBP\n● ADP Employment Change - (US) Measures the change in the number of employed people in the US. Higher number = more consumer spending = stimulating economic growth =\npositive for USD. Low reading = negative\n● Continuing Jobless Claims - (US) The number of people who are unemployed and who are receiving unemployment benefits. Higher number = bad/bearish. Lower number =\ngood/bullish.\n● Initial Jobless Claims - Number of people filing first-time claims for unemployment insurance. Larger than expected = weakness in market. Decreasing number should be\npositive/bullish.\n● EIA Crude Oil Stocks change - the change in the # of barrels in stock of crude oil & its derivatives. This report generates large price volatility as oil prices impact on commodity\nrelated currencies the most, such as CAD.\n● Exports - exports of good/services from residents to non-residents\n● Imports - imports of goods/services from non-residents to residents\n● Trade Balance - The difference in the value of its imports & exports of goods. Export data shows importance of growth. Imports provide indication domestic demand. This report\ngives early indication of net export performance. Positive value shows surplus, negative value shows deficit."
+},
+{
+"id": "p81",
+"page": 81,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● Retail Sales - measures the changes in sales of retail sector. Shows performance of short-term. Positive = bullish. Negative = bearish. Can be MoM or YoY\n● Consumer Price Index (EU norm) - measure of price movements by comparing retail prices of basket of goods/services\n● Producer Price Index - measure change in prices received by domestic producers of commodities in all states if processing. High reading = bullish. Low reading = bearish\n● Consumer Price Index (CPI) - changes in price of basket of goods / services. Good to measure purchasing trends and inflation. Anticipate hawkish attitude which is bullish. Or\nnegative / bearish\n● Consumer Price Index (Core) - basket of goods and services excluding volatile components like food, energy, alcohol, and tobacco\n● International Merchandise Trade - difference in value of it's imports and exports of Canadian goods, excluding intangibles like services. Export data gives info about Canada's\nexports because oil, gold, and mfg dominates a large part of GDP. If steady demand in exchange for exports us seen, then that's a positive for CAD\n● Participation Rate - total # of people of labor force (15 y/o or above) either looking for a job or working. This data is deseasonalized.\n● Average Hourly Earnings - The Federal reserve board pays close attention to this when setting interest rates. High number is positive for USD\n● Average Weekly Hours - average hours worked per week in US\n● Labor Force Participation Rate - the percentage of people who are currently working.\n● Unemployment Rate - number of unemployed workers divided by total civilian labor force. It's a leading indicator of Canadian economy. For US, higher rate is during recession\ntimes. A growing economy sees this rate decreasing. If rate is up, then lack of expansion. A rise of this rate weakens the economy.\n● Net Change in Employment - a rise in this number is positive for economic growth, making it bullish.\n● Nonfarm Payrolls - (US) The number of new jobs created during previous month in non-agricultural business. This number is subject to strong reviews in the upcoming months,\nand those reviews also tend to trigger volatility in fx board. A high number = bullish. Low reading = negative.\n● Factory Orders (MoM) - Total orders of durable and non-durable goods, such as sales, inventories and orders are mfg level. This offers insight to inflation and growth mfg sector.\nHigh = positive for USD, low reading = negative\n● Ivey Purchasing Managers Index - Captures business conditions in Canada. This is important indicator of business conditions in Canada. >50 is good, <50 is bad.\n● Ivey Purchasing Managers Index - Same thing as above, but seasonally adjusted.\n● FOMC Member Harker Speech - CEO of Third District Federal Reserve Bank, in Philadelphia. Participates on the Federal Open Market Committee.\n● FOMC Member Mester Speech - CEO of Fed Reserve Bank of Cleveland. Participates on Federal Open Market Committee.\n● Baker Hughes US Oil Rig Count - important for drilling industry and its suppliers. Shows the number of oil rigs currently in use. The more rigs in use, the more demand for\nproducts used in drilling, completing, producing and processing hydrocarbons."
+},
+{
+"id": "p83",
+"page": 83,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● MPC Member Haldane Speech - He is Chief Economist at BoE.\n● AiG Performance of Construction Index - Based on 120 interviews to construction based companies. Measures conditions based on short term and medium term in construction\nmarket. Companies answer questions related to production, employment, prices supplier deliveries, inventories and new orders. High = positive, low = bearish\n● Consumer Confidence - (Euro) measures level of consumer confidence in economic activity. High consumer confidence stimulate economy. Low drives economic downturn.\n● Services Sentiment - (Euro) measures business sentiment in the services sector. A survey is asked to firms about current and expected demand. The services sector is 2/3 of\nEuro GDP, this provides important confirmation of health for overall economy. High levels = upward trends for production and employment. A headline above zero = positive\nservice sector confidence. A negative number shows negative confidence.\n● Industrial Confidence - (Euro) measures level of industrial exec confidence in economic activity. Survey asks about orders and buildups of inventories. High level = stimulates\neconomic expansion. Low level = economic downturn.\n● Economic Sentiment Indicator - survey of consumers confidence in economic activity.\n● Business Climate - Designed to deliver a clear and timely assessment of cyclical situation within euro. High = healthy. Low = adverse business climate. A rise in indicator = upswing\nand improvement.\n● Bank of Canada Business Outlook Survey - interviews 100 biz execs. Allows short-term economic situation analysis.\n● FOMC Member Bostic Speech - CEO of Fed Reserve Bank in Atlanta. Member of Federal Open Market Committee\n● FOMC Member Williams Speech - President of Fed Reserve Bank in San Francisco. Serves on FOMC\n● Consumer Credit Change - The amount of money that individuals borrowed. Shows if consumers can afford large expenses which can fuel economic growth. A high figure may\nalso indicate that economy is overheating as people borrow above their means. High reading = bullish. Low reading = bearish.\n● Federal Reserve Bank of Boston President Rosengren Speech - speech. Medium impact.\n● BRC Like-for-Like Retail Sales - British Retail Consortium measures changes in actual value of retail sales from participating companies on a regular basis. Shows the\nperformance of the retail sector. High reading = positive. Low reading = negative.\n● Unemployment Rate s.a. = seasonally adjusted unemployment rate. Number of unemployed workers divided by total civilian labor force. If rate is up, lack of expansion within\nlabor market. A decrease in figure = bullish. Increase = negative\n● Current Account n.s.a. - net flow of current transactions including goods, services, and interest payments into and out of germany. A high reading - positive, and low reading =\nbearish\nNon-monetary policy’s ECB meeting - high impact\n●"
+},
+{
+"id": "p85",
+"page": 85,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● Real Retail Sales - Survey of goods sold in the last month and service as indicator of consumer demand. This number is real, not nominal, and is also n.s.a. (which means\nnon-seasonally adjusted). Increase = bullish\n● Housing Starts s.a. - how many new single-family homes or buildings were made. High = positive, low = bearish\n● JOLTS Job Openings - survey to help measure job vacancies. Collects data from employers, retailers, manufacturers, and difference offices each month.\n● FOMC Member Kashkari Speech - CEO of Minneapolis Federal Reserve Bank. Member of FOMC.\n● Manufacturing Production - significant as short-term indicator of UK manufacturing activity that dominates large part of GDP. High = positive, low = negative.\n● Industrial Production - Measures outputs of UK factories and mines. Changes in industrial projection are widely followed as a major indicator of strength in mfg sector. High =\nbullish. Low = bearish. Uptrend = inflationary = anticipate interest rates to rise. (w.d.a. = working day adjusted)\n● 10-y Bond Auction - Average yield on Federal Bonds. German bonds have maturities of above 10 years. These represent the yield an investor will receive by holding the bond until\nmaturity.\n● NIESR GDP Estimate (3M) - an estimate of growth of the last 3 months up to the report which comes out a month before the official announcement. This report is highly reliable\nand would influence UK monetary policy. High reading = bullish. Low = bearish.\n● Import Price Index - lets us know the changes in the price of imported products into the US. The higher the cost of imported goods, the stronger the effect the will have on\ninflation. Resulting in a higher probability of a rate rise. Generally, high reading = bullish, low = bearish. Can be YoY or MoM.\n● Building Permits - Shows the number of permits for new construction projects. Implies movement of corporate investments. It causes some volatility to the CAD. The more\npermits, the more bullish the CAD\n● 10-Year Note Auction - US Notes have maturities of 2, 3, 5, 7, and 10 years and pay interest every 6 months. The yield represents the return an investor will receive by holding the\nbond until maturity.\n● Fed’s Bullard Speech - President of Fed Reserve Bank of St. Louis. Member of FOMC\n● Retail Sales s.a. - survey of goods sold by retailers. Shows performance over retail sector over short and mid term. High = bullish. Low = bearish\n● Coincident Index - tracks current state of japanese economy. Rise = economic expansion. Decline = contraction in economy. >50% = bullish. <50% = bearish\n● Leading Economic Index - consists of 12 indexes. Higher than previous reading = bullish. Lower than previous = bearish\n● BoE Credit Conditions Survey - survey for bank and non-bank lenders helps BoE understand trends in credit conditions. This survey covers secured/unsecured lending to\nhouseholds and small businesses."
+},
+{
+"id": "p87",
+"page": 87,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● ECB Monetary Policy Meeting Accounts - overview of financial market, economic and monetary developments. Followed by summary of discussion. The aim is to provide\nrationale behind monetary policy decisions and enable members of the public ot improve their understand of gov’t’s assessment of economy.\n● Monthly Budget Statement - SUmmarizes the financial activities of federal entities, disbursing officers, and Fed Reserve Banks. Positive = bullish. Negative (deficit) = bearish.\n● Fed’s William Dudley Speech - CEO of Fed Reserve Bank of NY. Medium Impact\n● Foreign Investment in Japan Stocks - Report showing number of stocks issued in domestic market by foreign entity, in domestic market currency. Positive difference indicates\nnet sales of foreign securities by residents (capital inflow). Negative difference shows outflow.\n● Foreign bond investment - Report showing number of bonds issued in domestic market by foreign entity, in domestic market currency. Positive difference indicates net sales of\nforeign securities by residents (capital inflow). Negative difference shows outflow.\n● Eco Watchers Survey: Outlook/Current - watches region-by-region economic trends. High reading = positive/bullish. Low = negative\n● Retail Sales ex Autos - Same as retail sales, excluding autos. This is the “advance” report, which can be revised fairly significantly after final numbers are calculated. *how do we\nget notified if/when something gets revised?\n● Retail Sales Control Group - represents the total industry sales that are used to prepare estimate of PCE (personal consumption expenditures) for most goods.\n● German Buba President Weidmann speech - President of Deutsche Bundesbank\n● MPC Member Tenreyro Speech - BoE. Medium Impact\n● NZIER Business Confidence - shows business outlook in NZ. increasing number = increases in business investment that lead to higher levels of output. High reading = bullish. Low\nreading = bearish\n● Electronic Card Retail Sales - measures purchases made in NZ on debit, credit, and store cards. Gives hint of strength in retail sector. Influences interest rate decisions. High\nnumber = positive. Low number = negative\n● Tertiary Industry Index - high reading = positive, low reading = negative\n● Wholesale Price Index - value of sales made by wholesalers in Germany. Growing number = increase in retail trade and consumption = positive. (MoM or YoY)\n● Harmonised Index of Consumer Prices - index of consumer prices. Is a measure of prices used by Governing Council of EU to define/assess price stability in Euro.\n● Produce Price Index - Input - measure of rate of inflation experience by manufacturers when buying goods/services. Measures change in avg price of fixed basket of\ngoods/services. High = positive. Low = negative.\n● SNP Chairman Jordan Speech - Head of Swiss National Bank. His remarks can significantly alter value of the nation’s currency. This speech is used as an opportunity to extract\nclues."
+},
+{
+"id": "p89",
+"page": 89,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● Westpac Consumer Confidence - Measures level of sentiment that individuals have in economic activity. Expectations about 1-year and 5-year economic conditions and views\nabout current buying conditions for main household items.\n● Machinery Orders - Total value of machinery orders placed at major manufacturers in Japan. Considered the best leading indicator of business capital spending. Increase =\nstronger business confidence = positive trend for currency.\n● Home Loans - the number of home loans. Shows housing market in australia. High = positive.\n● Investment Lending for Homes - measures number of fixed loans. High reading anticipates growth for economy = bullish.\n● FDI - Foreign Direct Investment - total investment capital made by foreign enterprises, economic organizations, and individuals. Large investment indicates overall growth and\ndemand for china economy. High reading = positive.\n● MPC Member Saunders Speech - Medium Impact\n● Capacity Utilization - what percentage of US production capacity is being used. High capacity stimulate inflationary pressures. High = positive.\n● NAHB Housing Market Index - Presents home sales and expected home buildings in the future to show trend of housing market in US. High = bullish.\n● Bank of Canada Monetary Policy Report - Indicates sign of new fiscal policy. Any change makes CAD volatile. If shows hawkish outlook, then seen as positive/bullish.\n● BoC Rate Statement - medium used to communicate with investors about monetary policy decisions, specifically regarding interest rates\n● BoC Interest Rate Decision - If Hawkish about inflationary outlook of economy and rises the interest rates, then it is hawkish. If BoC is dovish, and keeps current interest rate (or\nlowers it), then it is seen as negative/bearish\n● BoC Press Conference - Press Conference after BoC Monetary Policy Report. 2 parts. First part = prepared statement is read. Then Q/A.\n● Fed’s Beige Book - Reports on current economic situation by interviews with key business contacts, economics, market experts, and other sources gathered by each of the 12\nFed Reserve Districts. Gives clear picture of overall US economic growth.\n● FOMC Member Kaplan Speech - President and CEO of Federal Reserve Bank of Dallas. He oversees 1,200 employees of Dallas Fed.\n● Consumer Inflation Expectation - presents consumer expectations of future inflation during next 12 months. Higher expectations = stronger effect on probability of rate hike.\nHigh reading = bullish.\n● RICS Housing Price Balance - presents housing cost in UK. High = positive for GBP.\n● HIA New Home Sales - presents number of new home sales in Australia. The high reading = bullish\n● NBS Press Conference - Medium Impact\nGross Domestic Product - gross value of all goods/services produced in China. High reading = bullish for CNY. Can Be (YoY or QoQ)\n●"
+},
+{
+"id": "p91",
+"page": 91,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● Philadelphia Fed Manufacturing Survey - spread index of manufacturing conditions in bank of philadelphia. Interrelated with ISM Manufacturing Index (Institute for SUpply\nManagement) and index of Industrial Production. Generally, above-the-expectation reading = positive for USD.\n● ECB Cœuré Speech - Medium Impact\n● Business NZ PMI - important for overall economic condition. >50 - bullish. <50 = bearish.\n● Producer and Import Prices - indicator of consumer price inflation. Higher the cost of imported goods, the stronger effect they will have on inflation. High inflation pressure may\nanticipate interest rates hike. High reading = positive. (MoM or YoY)\n● BoE Monetary Policy Statement - released usually only in the case of a change in the official bank rate. Talks about outcome regarding interest rates and other policy measures\nincluding economic conditions that influenced their decisions. Gives clues to future changes in monetary policy.\n● Manufacturing Shipments - Examines overall shipments of Canada. Growing number of goods including unsold inventories indicates a fall in market demand, which anticipates\nbearish. Also, decrease in shipment is seen as bearish. Increase in shipment = bullish\n● Michigan Consumer Sentiment Index - survey of personal consumer confidence in economic activity. Shows whether people are willing to spend money. High = positive.\n● Fed’s Quarles Speech - Medium Impact\n● Eurogroup Meeting - Medium Impact\n● Wholesale Sales - shows value of sales made by wholesalers in Canada. Growing number in wholesales = increases in retail trade and consumption = bullish.\n● Chicago Fed National Activity Index - monthly index designed to gauge overall economic activity and related inflationary pressure.\n● World Economic Forum - Davos - Annual meeting where world authorities share their opinions. Topics include economic instability, climate change, and equitable growth.\n● BoJ outlook report - Released semiannually. Medium Impact\n● BoJ Monetary Policy Statement - communicates committee’s votes regarding interest rates and other policy measures such as economic conditions influencing their decision,\nthe statement gives clues to future changes in monetary policy.\n● BoJ Interest Rate Decision - Generally, if BoJ is hawkish of inflationary outlook, then interest rate is positive/bullish. If dovish, then they keep existing rate or cut the rate =\nbearish.\n● All Industry Activity Index - monthly change in overall production by all industries in japan. High = bullish\n● BoJ Press Conference - communications with investors regarding monetary policy. Talks about factors that affected the most recent interest rate decision and other stuff.\n● Public Sector Net Borrowing - amount of new debt held by UK Govt. If net borrowing is negative, means UK are surplus and should be positive. A deficit is generally unfavorable\nfor economy, which makes bearish."
+},
+{
+"id": "p93",
+"page": 93,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● ZEW Survey - Current Situation - measures institutional investor sentiment. Reflects the difference between the share of investors that are optimistic and the share of analysts\nthat are pessimistic.\n● Adjusted Merchandise Trade Balance - (Japan) Seasonal measure of balance amount between import and export. Positive value shows trade surplus, negative value shows\ntrade deficit. Japan is so much dependant on exports. High reading = positive for JPY\n● Merchandise Trade Balance Total - If a steady demand in change for japanese exports is seen, that would turn into a positive\n● Average Earnings excluding Bonus (3Mr/Yr) - short term indicator of how levels of pay are changing within the UK economy. Can be seen in measure of growth in “basic pay”.\nPositive earnings growth anticipated positive/bullish for GBP. Low = negative/bearish.\n● ILO Unemployment Rate (3M) - number of unemployed workers divided by total civilian labor force. Leading indicator for UK Economy.\n● Average Earnings including Bonus (3Mr/Yr) - indicator of how levels of pay are changing within UK economy.\n● Claimant Count Change - presents the number of unemployed people in UK. A rise in this indicator has negative implications for consumer spending which discourage economic\ngrowth. High reading = bearish. Low reading = bullish\n● Claimant Count Rate - monthly measure of unemployment in UK. Indicates health of UK labor market. If rate is up, shows lack of expansion, which makes it negative/bearish.\n● Housing Price Index - Provides estimate value of housing market conditions. High reading = positive.\n● Existing Home Sales - High reading = positive for USD. High Impact.\n● EcoFin Meeting - Main decision-making body of the Council of european union. Covers areas such as coordinated economic measures, etc. Medium Impact\n● Gfk Consumer Confidence Survey - Measures level of consumer confidence in economic activity. High reading = positive/bullish.\n● IFO - Business Climate - closely watched as an early indicator of current conditions and business expectations in Germany. Low reading = negative\n● IFO - Current Assessment - http://www.fxstreet.com/education/fundamental/fundamental-forex-strategies/2010-06-11.html\n● IFO - Expectations - same thing as IFO - Current Assessment\n● ECB Deposit Rate Decision - Is the interest rate paid on surplus liquidity that credit institutions may deposit overnight in an account with a national central bank that is part of\nEurosystem.\n● ECB Interest Rate Decision - IF ECB is hawkish about inflation and rises interest rates, then it is positive/bullish for EUR.\n● ECB Monetary Policy Statement & Press Conference - ECB President gives a press conference regarding monetary policy. His hawkish view = positive. His dovish view = bearish\n● New Home Sales Change - high number = bullish"
+},
+{
+"id": "p95",
+"page": 95,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● BoJ Monetary Policy Meeting Minutes - The BoJ publishes a study of economic movements in Japan after the actual meeting. If BoJ Minutes show a hawkish outlook, that is\nseen as positive for JPY. Dovish = negative.\n● Gross Domestic Product Annualized - Is a gross measure of market activity because it indicates the pace at which a country’s economy is growing or decreasing. A high reading\nor better than expected reading = positive for USD. Low reading = negative\n● Durable Goods Orders - Measures the cost of orders received by manufacturers of durable goods, which means goods planned to last 3+ years (such as motor\nvehicles/appliances). These typically involve large investments. High = Bullish\n● Durable Goods ex Transportation - Same as above, excluding transport sector\n● Goods Trade Balance - Released monthly, between 4-7 days before International Trade Balance.\n● Bank of Japan Governor Kuroda Speech - Medium Impact\n● BoE’s Governor Carney Speech - High Impact\n● ECB's Lautenschläger Speech - Medium Impact\n● Personal Income - Measures total income received by individuals, from all sources including wages, salaries, interest, dividends, rent, works comp, proprietors’ earnings, transfer\npayments. High reading = positive.\n● Personal Consumption Expenditures - Price Index - Measures total expenditure by individuals. Accounts for such situations when consumers switch from buying one godo to\nanother based on price changes. Preferred measure of inflation for Fed Reserve.\n● Dallas Fed Manufacturing Business Index - This survey is conducted monthly to get assessment of Texas’s factory activity.\n● Jobs/Applicants Ratio - divide monthly active job openings by monthly active applications\n● Overall Household Spending - measures total expenditure by households. Used as an indicator of consumer optimism. Also considered a measure of economic growth.\n● Large Retailer’s Sales - captures total value of good sold in large stores, convenience stores, supermarkets. High reading = positive\n● Retail Trade - captures aggregate sales made through a business location. High reading = positive. (can also be s.a.)\n● KOF Leading Indicator - Captures movement of GDP growth and economic trend in Switzerland.\n● S&P/Case-Shiller Home Prices Indices - examines the changes in value of residential real estate market in 20 regions across US. High reading = bullish.\n● ECB’s Mersch Speech - Medium Impact\n● RBA Trimmed Mean CPI - measure of price movements by the comparison between retail prices of a shopping basket of goods/services. Trimmed Mean is calculated as the\nweighted mean of the central 70% of the quarterly price change distribution of all CPI components. Annual rates based on quarterly calculations"
+},
+{
+"id": "p97",
+"page": 97,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Calendrier Économique (30%)",
+"text": "ANALYSE FONDAMENTALE\nCalendrier Économique (30%)\nVous devez étudier et comprendre chaque nouvelle du calendrier économique.\nVoici une liste que j'ai faite:\n● Non-manufacturing PMI - based on survey of around 1,200 companies covering 27 industries. >50 = expansion. <50 = contraction.\n● NBS Manufacturing PMI - Studies business conditions in the chinese mfg sector. >50 = expansion. <50 = contraction.\n● UBS Consumption Indicator - private consumption trends which is the most important component of Swiss GDP. This index is based on 5 components: new car sales, business\nactivity in retail sector, number of domestic hotel overnights by swiss nationals, consumer sentiment index, credit card transactions via UBS points of sale. Higher than expected =\nbullish.\n● ZEW Survey - Expectations - presents business conditions, employment conditions and other elements affecting the day to day running of a business in Switzerland. High\nreading = bullish.\n● Pending Home Sales - captures residential housing contract activity of existing single-family homes. High rating = positive. (YoY or MoM)\n● Fed’s Monetary Policy Statement - Following Fed’s rate decision, the FOMC released statement regarding monetary policy. Hawkish view = positive/bullish.\n● Fed Interest Rate Decision - A rate hike tends to boost local currency, as it is understood as a sign of a healthy inflation. Rate cut = sign of economic and inflationary woes which\nweakens currency. If rates remain unchanged, attention turns ot the tone of the FOMC statement, whether the tone is hawkish or dovish over future developments of inflation.\n● Retail Price Index (RPI) - (UK) Measure of inflation published monthly. Measures change in the cost of a representative sample of retail goods/services."
+},
+{
+"id": "p99",
+"page": 99,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nInformations en temps réel sur les différents événements\nfondamentaux dans le monde (informations sur la banque centrale,\nproblèmes politiques, guerres en cours, essentiellement tout événement\npouvant affecter une devise). Ce sera la majorité de notre travail\nfondamental et sera le principal outil pour créer notre idée\nfondamentale.\nSites Web que j'utilise:\nForexLive (préféré), BBC (GBP)\nBloomberg (USD), Reuters\nThe Guardian, Financial Times\nGoogle"
+},
+{
+"id": "p101",
+"page": 101,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nForexLive est le meilleur site pour lire et rechercher tout ce qui se passe\nsur le marché des changes.\n4 analystes professionnels: Ils suivent chaque source d’information (sites de nouvelles)\net les publient sur le site 24/7\nChaque publication = Headline fondamental (il peut y avoir 50 à 200 headlines par jour)\nAu début, vous lirez tous les headlines, mais avec le temps et l'expérience, vous saurez\nquoi chercher et serez sélectif dans votre lecture.\nLa section Must Read regroupe les nouvelles les plus importantes du moment.\nIl est indispensable de lire tous les jours la section Trading Session Wraps pour se tenir\nau courant de ce qui se passe."
+},
+{
+"id": "p103",
+"page": 103,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nQue devriez-vous regarder lorsque vous lisez, recherchez, analysez les\nheadline news?\nVous devez d’abord comprendre que vous ne comprenez pas la majorité des headlines\nau début, vous ne connaissez pas l’histoire. Il vous faudra quelques mois pour vous\nmettre à jour. Plus vous lisez, plus cela deviendra clair.\nVotre objectif est d’accumuler des informations fondamentales importantes et de les\nmettre dans votre sac fondamental pour accroître votre compréhension/connaissance\net pour ensuite former votre idée fondamentale."
+},
+{
+"id": "p105",
+"page": 105,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nQue devriez-vous regarder lorsque vous lisez, recherchez, analysez les\nheadline news?\nIl y a 3 principes qui affectent le marché:\n1. Lorsqu'un problème survient ou se manifeste, la monnaie réagira négativement\nproportionnellement à l'ampleur du problème. Même chose pour la durée de la négativité.\nCependant, les nouvelles négatives sont toujours plus puissantes que les nouvelles positives, car\nles êtres humains sont plus sensibles à la négativité.\n2. Lorsque survient une solution / un bon événement, la monnaie réagira de manière positive\nproportionnellement à la taille de la bonne nouvelle. Même chose pour la durée de la positivité.\n3. S'il n'y a pas de problème ni de bonne nouvelle, le principe fondamental est inchangé, ce qui\nsignifie qu'il est moins important et que le marché évoluera en fonction de l'analyse technique."
+},
+{
+"id": "p107",
+"page": 107,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nPrincipales sessions de trading:\nTokyo:\nLe marché asiatique est le plus actif.\nDevises qui sont le plus actives: JPY, AUD, NZD\nLondon:\nLe marché européen est le plus actif.\nDevises qui sont le plus actives: GBP, EUR, CHF\nNew York:\nLe marché américain est le plus actif.\nDevises qui sont le plus actives: USD, CAD, GOLD"
+},
+{
+"id": "p109",
+"page": 109,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nRappelez-vous que nous avons dit que nous n'allons jamais échanger des paires\nmajeures, pourquoi? Parce qu'ils contiennent le dollar américain en eux.\nMaintenant, pourquoi ne devrions-nous pas échanger l'USD?\nLa session de New York est la pire session pour trader pour les raisons suivantes:\nLe dollar américain est une monnaie extrêmement bipolaire et la plus difficile à prédire en\nraison de toutes les relations politiques/économiques avec les autres pays.\nTrump.\nL’agenda des institutions financières (hors trading).\nL’USD est mieux pour le day trading, pas pour le swing trading, ne correspond pas à notre style\net par extension n’est pas optimal."
+},
+{
+"id": "p111",
+"page": 111,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nQuelle monnaie allons-nous trader? Des paires mineures, mais seulement\nquelques-unes.\nGBP/JPY\nGBP/AUD\nGBP/NZD\nEUR/JPY\nEUR/AUD\nEUR/NZD\nAvec beaucoup d'expérience: XAU/USD"
+},
+{
+"id": "p113",
+"page": 113,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nVous voyez que toutes ces devises sont principalement en mouvement durant les\nsessions de Tokyo et de Londres (GBP, EUR, JPY, AUD, NZD), ce qui va être nos heures\nde trading préférées. Cependant, vous pouvez échanger à tout moment de la journée si\nvous avez une bonne opportunité/entrée.\nPourquoi ces monnaies?\nLes paires sélectionnées ont peu de liens politiques / économiques entre elles. Cela facilite la\nprédiction du fondamental et le rend plus stable. Cela nous permet d’effectuer des opérations\nde swing qui peuvent durer de quelques jours à quelques semaines sans trop de turbulences\nfondamentales par rapport à l’USD. En outre, ils sont connus pour être des paires de traders\nprofessionnels, car ils bougent beaucoup et obéissent à une analyse plus technique, ils sont\nparfaits pour générer de l'argent."
+},
+{
+"id": "p115",
+"page": 115,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nCorrélation entre les monnaies et ce qui fait que chaque devise bouge\nfondamentalement:\nJPY:\nLe JPY est inversement corrélé au CNY\nLe JPY est une valeur refuge en Asie. Quand les choses vont mal en Asie, le yen monte\nLe JPY est une valeur refuge, car ils ont une politique monétaire stricte. Ils gèrent leur\néconomie très sérieusement et en toute sécurité. C’est un investissement sans souci\npour les investisseurs asiatiques\nPolitique monétaire et données économiques (taux d'intérêt, BOJ, PIB, inflation, IPC, etc.)"
+},
+{
+"id": "p117",
+"page": 117,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nCorrélation entre les monnaies et ce qui fait que chaque devise bouge\nfondamentalement:\nAUD:\nL'AUD travaille principalement avec la Chine, son économie en dépend\nL'AUD est directement corrélé à l'économie chinoise\nL'AUD est un grand producteur d'or, quand l'or l'apprécie, l'impact est positif sur l'AUD\nLe petit frère d’AUD est NZD\nPolitique monétaire et données économiques (taux d'intérêt, RBA, PIB, inflation, IPC, etc.)"
+},
+{
+"id": "p119",
+"page": 119,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nCorrélation entre les monnaies et ce qui fait que chaque devise bouge\nfondamentalement:\nNZD:\nNZD est très dépendant de l’AUD, c’est leur principal partenaire commercial\nÉtant donné que le dollar australien est dépendant de la Chine, le NZD l'est aussi indirectement.\nLe NZD a une économie très dépendante des produits laitiers qu'ils exportent\nPolitique monétaire et données économiques (taux d'intérêt, RBNZ, PIB, inflation, IPC, etc.)"
+},
+{
+"id": "p121",
+"page": 121,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nCorrélation entre les monnaies et ce qui fait que chaque devise bouge\nfondamentalement:\nGBP:\nBrexit, dépendant des nouvelles sur le brexit\nRelation avec l'UE. Après le Brexit, cette devise évoluera en fonction de cette relation.\nRelations au sein du Royaume-Uni (Irlande, Écosse, Angleterre)\nPolitique monétaire et données économiques (taux d'intérêt, BOE, PIB, inflation, IPC, etc.)"
+},
+{
+"id": "p123",
+"page": 123,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nCorrélation entre les monnaies et ce qui fait que chaque devise bouge\nfondamentalement:\nEUR:\nRelations avec les Etats-Unis, Trump veut mettre des tarifs sur les voitures Euro\nRelation avec les pays de l'UE (très important)\nUn pays peut affecter (positivement ou négativement) l’UE dans son ensemble\nPolitique monétaire et données économiques (taux d'intérêt, BCE, PIB, inflation, IPC, etc.)\nBrexit, mais petit effet comparé à GBP"
+},
+{
+"id": "p125",
+"page": 125,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nCorrélation entre les monnaies et ce qui fait que chaque devise bouge\nfondamentalement:\nCHF:\nSafe heaven de l’Europe, quand l’EUR ne va pas bien, CHF augmente"
+},
+{
+"id": "p127",
+"page": 127,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nCorrélation entre les monnaies et ce qui fait que chaque devise bouge\nfondamentalement:\nUSD:\nMarché des actions (actions, indices, etc.)\nRelations internationales (Trump vs Chine, Corée du Nord, UE, etc.)\nPolitique monétaire et données économiques (taux d'intérêt, FED, PIB, inflation, IPC, etc.)\nMarché immobilier\nUSD est l'opposé de XAU (Gold)\nGénéralement inversement corrélée à AUD en raison de XAU et CNY"
+},
+{
+"id": "p129",
+"page": 129,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nCorrélation entre les monnaies et ce qui fait que chaque devise bouge\nfondamentalement:\nCAD:\nTrès dépendant du prix du pétrole, le canada est un gros producteur de pétrole\nSi le pétrole est en hausse, le CAD sera en hausse\nRelation avec l'USD, des headlines spécifiques concernant les situations positives/négatives\nentre les deux pays peuvent affecter le CAD\nPolitique monétaire et données économiques (taux d'intérêt, BOC, PIB, inflation, IPC, etc.)"
+},
+{
+"id": "p131",
+"page": 131,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant, apprenons à connaître nos devises. Cela nous aidera à\nmieux comprendre nos headline news.\nCorrélation entre les monnaies et ce qui fait que chaque devise bouge\nfondamentalement:\nXAU (GOLD):\nValeur refuge pour le monde entier, principalement investi contre le USD."
+},
+{
+"id": "p133",
+"page": 133,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nQue devez-vous rechercher lorsque vous lisez, recherchez, analysez les\nactualités?\nIl y a 3 principes qui bougent/affectent le marché:\n1. Lorsqu'un problème survient/émerge, la devise réagit négativement proportionnellement à la\ntaille du problème. Même chose pour la durée de la négativité. Cependant, les nouvelles\nnégatives sont toujours plus puissantes que les nouvelles positives car les humains sont plus\nsensibles à la négativité.\n2. Lorsqu'une solution/événement positif se produit, la devise réagit positivement\nproportionnellement à la taille de la bonne nouvelle. Même chose pour la durée de la positivité.\n3. S'il n'y a pas de problème ou de bonne nouvelle, le fondamental est plat, ce qui signifie qu'il est\nmoins important et que le marché va évoluer selon l'analyse technique."
+},
+{
+"id": "p135",
+"page": 135,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nQue devez-vous rechercher lorsque vous lisez, recherchez, analysez les\nactualités?\nIl y a 3 principes qui bougent/affectent le marché:\nExemple 1 (Simulation):\nLes tensions entre les États-Unis et la Corée du Nord s'accumulent depuis quelques\nsemaines maintenant. La Corée du Nord continue de tester sa nouvelle technologie\nd'armes, mais il n'y a eu aucune attaque contre les États-Unis ou tout autre pays.\nComment interprétez-vous cette situation fondamentale?\nPositif ou négatif? Taille de la situation? Durée de la situation? Impact sur le marché?"
+},
+{
+"id": "p137",
+"page": 137,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nQue devez-vous rechercher lorsque vous lisez, recherchez, analysez les\nactualités?\nIl y a 3 principes qui bougent/affectent le marché:\nExemple 1 (Simulation):\nLes tensions entre les États-Unis et la Corée du Nord s'accumulent depuis quelques\nsemaines maintenant. La Corée du Nord continue de tester sa nouvelle technologie\nd'armes, mais il n'y a eu aucune attaque contre les États-Unis ou tout autre pays.\nRéponse: Les tensions se font fortement sentir sur l'ensemble du marché des devises,\ntous les regards sont tournés vers la Corée du Nord. La situation est assez négative\n(8/10) en raison des craintes d'escalade et d’une prochaine guerre potentielle. La\nnégativité durera jusqu'à ce que ce problème soit résolu définitivement. Vous devez\nsurveiller attentivement les headlines. Votre trading sera concentré sur cette situation."
+},
+{
+"id": "p139",
+"page": 139,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nQue devez-vous rechercher lorsque vous lisez, recherchez, analysez les\nactualités?\nIl y a 3 principes qui bougent/affectent le marché:\nExemple 2 (Simulation):\nLe président angolais (Angola) a été assassiné hier soir en raison d'un conflit politique\navec un autre pays africain.\nComment interprétez-vous cette situation fondamentale?\nPositif ou négatif? Taille de la situation? Durée de la situation? Impact sur le marché?"
+},
+{
+"id": "p141",
+"page": 141,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nQue devez-vous rechercher lorsque vous lisez, recherchez, analysez les\nactualités?\nIl y a 3 principes qui bougent/affectent le marché:\nExemple 2 (Simulation):\nLe président angolais (Angola) a été assassiné hier soir en raison d'un conflit politique\navec un autre pays africain.\nAnswer: Le marché est à peine touché. Il ne se soucie pas vraiment de cette nouvelle.\nPourquoi donc? Parce qu'elle n'affecte pas les devises mondiales que nous échangeons,\nl'Angola n'a pas de relations importantes avec le reste du monde. Le fondamental est\nplat."
+},
+{
+"id": "p143",
+"page": 143,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nQue devez-vous rechercher lorsque vous lisez, recherchez, analysez les\nactualités?\nIl y a 3 principes qui bougent/affectent le marché:\nExemple 3 (Simulation):\nUne guerre civile éclate en Chine pour renverser le gouvernement. L'armée est dans les\nrues pour combattre les civils, tout le pays est fermé. Chaque jour, la situation ne fait\nqu'empirer.\nComment interprétez-vous cette situation fondamentale?\nPositif ou négatif? Taille de la situation? Durée de la situation? Impact sur le marché?"
+},
+{
+"id": "p145",
+"page": 145,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nQue devez-vous rechercher lorsque vous lisez, recherchez, analysez les\nactualités?\nIl y a 3 principes qui bougent/affectent le marché:\nExemple 3 (Simulation):\nUne guerre civile éclate en Chine pour renverser le gouvernement. L'armée est dans les\nrues pour combattre les civils, tout le pays est fermé. Chaque jour, la situation ne fait\nqu'empirer.\nAnswer: L'effet de ce titre se fait FORTEMENT sentir sur l'ensemble du marché des\ndevises (10/10). Une atmosphère de risque OFF se fait sentir chez les investisseurs. Ce\nproblème pourrait durer des mois/années et sera une grande partie de votre trading.\nDe grandes opportunités et de grands mouvements seront créés à cause de cette\nsituation."
+},
+{
+"id": "p147",
+"page": 147,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nRecherche supplémentaire...\nSi vous avez besoin de plus d'informations que celles disponibles sur ForexLive,\nvous allez effectuer des recherches sur les autres sites d'actualités et sur Google.\nCela vous permettra de pousser votre réflexion et d'avoir une idée fondamentale\nplus précise.\nAvertissement: Ne compliquez pas trop vos fondamentaux, vous n'êtes pas un\nanalyste, vous êtes un trader. Vous devez en savoir assez pour obtenir un biais et une\norientation du marché, mais vous ne devez pas commencer à faire une analyse\nstatistique de chaque détail. Cela apportera plus de confusion et vous ne pourrez pas\nprendre de décisions éclairées sur le marché."
+},
+{
+"id": "p149",
+"page": 149,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant la GRANDE FINALE: Création de L’idée Fondamentale\nC'est la partie la plus importante\nVous utiliserez toutes les informations que vous avez acquises dans tous vos travaux de\nbase précédents (calendrier économique, analyse des données économiques, analyse\ndes actualités, recherches en ligne, etc.) et créerez votre idée fondamentale.\nAvant même de regarder les graphiques, vous DEVEZ savoir dans quelle direction le\nmarché se dirige\nExemple:\nGBP - hausse du taux d'intérêt + Deuxième référendum et annulation du Brexit\nJPY - Fin de la guerre commerciale entre les Etats-Unis et la Chine, accord conclu + Taux de\nchômage élevé et anticipation d'une réduction du taux au cours des 3 à 6 prochains mois\nGBP FORT et JPY FAIBLE = LONG GBP/JPY"
+},
+{
+"id": "p151",
+"page": 151,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant la GRANDE FINALE: Création de L’idée Fondamentale\nC'est la partie la plus importante\nVous utiliserez toutes les informations que vous avez acquises dans tous vos travaux de\nbase précédents (calendrier économique, analyse des données économiques, analyse\ndes actualités, recherches en ligne, etc.) et créerez votre idée fondamentale.\nAvant même de regarder les graphiques, vous DEVEZ savoir dans quelle direction le\nmarché se dirige\nExemple:\nEUR - Rien ne se passe vraiment fondamentalement\nAUD - Un excellent rapport sur l'emploi et la croissance économique entraînent une\nhausse des taux d'intérêt + la situation du CoronaVirus est terminée\nEUR NEUTRE et AUD FORT = SHORT EUR/AUD"
+},
+{
+"id": "p153",
+"page": 153,
+"section": "ANALYSE FONDAMENTALE",
+"title": "Headline news (70%)",
+"text": "ANALYSE FONDAMENTALE\nHeadline news (70%)\nMaintenant la GRANDE FINALE: Création de L’idée Fondamentale\nC'est la partie la plus importante\nVous utiliserez toutes les informations que vous avez acquises dans tous vos travaux de\nbase précédents (calendrier économique, analyse des données économiques, analyse\ndes actualités, recherches en ligne, etc.) et créerez votre idée fondamentale.\nAvant même de regarder les graphiques, vous DEVEZ savoir dans quelle direction le\nmarché se dirige\nExemple:\nXAU - Tensions entre les États-Unis et la Corée du Nord, tarifs américains sur les\nvoitures de l'UE, conflit entre la Chine et l'Australie\nUSD - Baisse des taux d'intérêt + mauvais rapport sur la création d’emplois\nXAU FORT et USD FAIBLE = LONG XAU/USD"
+},
+{
+"id": "p159",
+"page": 159,
+"section": "SENTIMENT DU MARCHÉ",
+"title": "Pourquoi 90% des retail traders perdent 90% de leur argent en moins",
+"text": "SENTIMENT DU MARCHÉ\nPourquoi 90% des retail traders perdent 90% de leur argent en moins\nde 90 jours?\nLes retail traders sont des commerçants individuels de la population générale qui\nnégocient leur propre compte. Habituellement, ils n’ont pas les mêmes\nconnaissances/expertise/expérience que les traders institutionnels.\nErreurs:\n1. Ils ne prennent pas le marché au sérieux, ils le voient seulement comme un moyen de\ngagner beaucoup d'argent rapidement - manque de professionnalisme\n2. Ils manquent de connaissances et de compréhension du marché, ils le sous-estiment -\nignorance\n3. Ils sont émotifs dans leur approche, quand ils ont des gains ou des pertes, cela affecte\ndirectement leur trading - émotions\n4. Ils comptent sur quelqu'un d'autre pour leur dire quoi faire (signaux, mentorat, etc.) -\nmanque de responsabilité\n5. Ils sont impatients et risquent beaucoup d’argent - over leverage"
+},
+{
+"id": "p161",
+"page": 161,
+"section": "SENTIMENT DU MARCHÉ",
+"title": "Quelle est la différence entre un retail trader et un trader institutionnel?",
+"text": "SENTIMENT DU MARCHÉ\nQuelle est la différence entre un retail trader et un trader institutionnel?\nNous avons expliqué précédemment ce qu’est un retail trader. D'autre part, un trader\ninstitutionnel est une personne qui travaille pour une banque / un hedge fund et qui a\nsuivi une formation financière rigoureuse à l'université et directement dans une\ninstitution financière.\nIls sont professionnels dans leur approche, ils ont les connaissances/expérience et ils\ngèrent de grands comptes de trading. C'est leur carrière et ils y ont consacré leur vie.\nEn tant que traders institutionnels, ils ont un léger avantage en termes de rapidité\nd'accès aux informations et aux logiciels personnalisés qu'ils utilisent. Toutefois, cet\navantage est minime et ne mérite pas d'être pris en compte dans notre manière de\ntrader."
+},
+{
+"id": "p163",
+"page": 163,
+"section": "SENTIMENT DU MARCHÉ",
+"title": "Quelle est la relation entre les retail traders et les institutions?",
+"text": "SENTIMENT DU MARCHÉ\nQuelle est la relation entre les retail traders et les institutions?\nOn peut dire que les institutions financières sont les prédateurs\net les retail traders sont les proies.\nL’objectif de toute institution financière est de gagner\nde l’argent. Ils le font en prenant l’argent des autres joueurs\nsur le marché.\nIls vont tromper les retail traders de nombreuses façons\npour qu’ils perdent leurs trades. Ils pourront donc s’en sortir\nun profit. C'est le la loi de la jungle. Le Top 10\ncontrôle 64,78%\ndu marché"
+},
+{
+"id": "p165",
+"page": 165,
+"section": "SENTIMENT DU MARCHÉ",
+"title": "Quelle est la règle la plus importante du marché des changes? Le",
+"text": "SENTIMENT DU MARCHÉ\nQuelle est la règle la plus importante du marché des changes? Le\nmécanisme de base, immuable, du marché?\nLE MARCHÉ EST UN JEU À SOMME NULLE.\nPOUR AVOIR UN GAGNANT, VOUS DEVEZ AVOIR UN PERDANT ÉGAL.\nSi je fais un trade et gagne 100 000 $, quelqu'un/plusieurs doit perdre\n100 000 $ en même temps que je ferme mon trade."
+},
+{
+"id": "p167",
+"page": 167,
+"section": "SENTIMENT DU MARCHÉ",
+"title": "Comment devriez-vous vous positionner sur le marché?",
+"text": "SENTIMENT DU MARCHÉ\nComment devriez-vous vous positionner sur le marché?\nVous devez toujours être placé dans la même direction que les traders institutionnels et\nla plupart du temps contre les retail traders.\nComment pouvez-vous savoir si vous êtes bien placé?\nEn suivant ce plan de trading, vous tradez et pensez comme un trader institutionnel\nprofessionnel. Les retail traders sont également faciles à prévoir. Si vous connaissez leur\nprochain trade, vous pouvez faire le contraire de ce qu'ils font.\nSi 90% des retail traders sont en achat sur le marché puisque le trade est trop\nfacile/visible, vous savez que les institutions financières se positionneront à la vente.\nIls feront soit le contraire complètement ou soit baisser le prix temporairement pour\nabattre les retail traders et laisser le prix remonter s’il est dans leur intérêt que la\nmonnaie s’apprécie."
+},
+{
+"id": "p169",
+"page": 169,
+"section": "SENTIMENT DU MARCHÉ",
+"title": "Qu'est-ce qui différencie un gagnant d'un perdant sur le marché?",
+"text": "SENTIMENT DU MARCHÉ\nQu'est-ce qui différencie un gagnant d'un perdant sur le marché?\nCe sera votre capacité à suivre les mouvements institutionnels. Plus vous êtes capable\nde prédire et de suivre les institutions, plus vous allez faire de pips.\nVous devez devenir un HYBRIDE, avoir les connaissances/l'expérience d'un trader\ninstitutionnel mais avoir toute la flexibilité/liberté personnelle d'un retail trader pour\nentrer/sortir/gérer son trade sans hiérarchie. Les institutions sont puissantes mais\nlentes, les retail traders sont faibles mais rapides, vous devez devenir puissant et rapide\nVous avez également moins d’argent à gérer, ce qui rend l’entrée et la sortie très facile,\nvous n’aurez probablement jamais de problème de liquidité où vous ne pouvez pas\nentrer dans le trade parce que votre position est trop grande. Même si vous y arrivez,\nc’est un bon problème à avoir."
+},
+{
+"id": "p173",
+"page": 173,
+"section": "PRICE ACTION",
+"title": "Le price action est l'art d'étudier les chandeliers.",
+"text": "PRICE ACTION\nLe price action est l'art d'étudier les chandeliers.\nEn analysant les chandeliers et leurs mouvements sur le marché, nous\npouvons comprendre le positionnement des grandes institutions\nfinancières, les pièges à retail traders et ce que pensent/font les\nacheteurs et les vendeurs.\nNous connaissons l’histoire derrière les charts, c’est très utile pour la\nconstruction de notre idée technique."
+},
+{
+"id": "p177",
+"page": 177,
+"section": "PRICE ACTION",
+"title": "Principes des chandeliers",
+"text": "PRICE ACTION\nPrincipes des chandeliers:\n1. Une longue mèche (wick) équivaut à une rejection importante d’un niveau du\nmarché. Ce qui signifie que le prix ne veut pas aller plus haut/bas car soit nous\navons atteint le Take Profit des institutions financières, ou soit il y a un agenda\nque les institutions financières veulent respecter. Il est aussi possible que ça soit un\npiège pour les retail traders, ou bien un événement fondamental critique.\n2. Une grande chandelle complète équivaut à une position importante entrée sur le\nmarché. Cela signifie que les institutions financières sont entrées dans leur trade\nou qu'elles manipulent le prix pour piéger les retail traders.\n3. Une longue période de consolidation en chandeliers équivaut à ce que les\ninstitutions financières élaborent leur plan de match. Ce qui signifie qu'elles\ngagnent du temps en ne déplaçant pas le prix ou bien accumulent/répartissent\nleurs positions dans une fourchette de prix."
+},
+{
+"id": "p199",
+"page": 199,
+"section": "PRICE ACTION",
+"title": "Candlestick patterns",
+"text": "PRICE ACTION\nCandlestick patterns:\nBasés sur les 3 principes des chandeliers, ces modèles sont récurrents sur le marché. Ils\nnous disent ce qui se passe avec les acheteurs/vendeurs/institutions/traders/etc.\nPourrait servir de confirmation pour entrer dans un trade après que nous ayons\ncomplété notre plan de trading.\n#1:\nHammer Candlestick\nBasé sur le premier principe\nBearish and Bullish"
+},
+{
+"id": "p201",
+"page": 201,
+"section": "PRICE ACTION",
+"title": "Candlestick patterns",
+"text": "PRICE ACTION\nCandlestick patterns:\nBasés sur les 3 principes des chandeliers, ces modèles sont récurrents sur le marché. Ils\nnous disent ce qui se passe avec les acheteurs/vendeurs/institutions/traders/etc.\nPourrait servir de confirmation pour entrer dans un trade après que nous ayons\ncomplété notre plan de trading.\n#2:\nEngulfing Candlestick\nBasé sur le deuxième principe\nBearish and Bullish"
+},
+{
+"id": "p203",
+"page": 203,
+"section": "PRICE ACTION",
+"title": "Candlestick patterns",
+"text": "PRICE ACTION\nCandlestick patterns:\nBasés sur les 3 principes des chandeliers, ces modèles sont récurrents sur le marché. Ils\nnous disent ce qui se passe avec les acheteurs/vendeurs/institutions/traders/etc.\nPourrait servir de confirmation pour entrer dans un trade après que nous ayons\ncomplété notre plan de trading.\n#3:\nClose & Reverse Candlestick\nBasé sur le deuxième et troisième principe\nBearish and Bullish"
+},
+{
+"id": "p205",
+"page": 205,
+"section": "PRICE ACTION",
+"title": "Avec le temps et l'expérience, vous serez en mesure de mieux",
+"text": "PRICE ACTION\nAvec le temps et l'expérience, vous serez en mesure de mieux\ncomprendre la relation entre les acteurs du marché et le mouvement\ndes chandeliers.\nSuivez les principes et les candlestick patterns au début, cela vous\nguidera dans la bonne direction.\nParfois, les mouvements sur le marché sont très complexes. Il peut\narriver que plusieurs principes/patterns fusionnent pour créer quelque\nchose de nouveau et d’unique. Vous devez utiliser votre créativité et\nvotre compréhension pour trouver une solution à ces occasions."
+},
+{
+"id": "p209",
+"page": 209,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Structure",
+"text": "ANALYSE TECHNIQUE\nMarket Structure\nSupport:\nUn support est un niveau de prix dans une tendance baissière où le marché s’arrête, fait\nune pause ou rebondit à la hausse.\nResistance:\nUne résistance est un niveau de prix dans une tendance haussière où le marché s’arrête\nmarque une pause/rebondit à la baisse.\nTrès important, les supports et les résistances sont des zones qui\nvont de la fin du chandelier à la fin de la mèche (wick)."
+},
+{
+"id": "p213",
+"page": 213,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Structure",
+"text": "ANALYSE TECHNIQUE\nMarket Structure\nComment un support/résistance est-il créé?\nSupport:\nLe support est créé en 2 parties. La première partie concerne les vendeurs sur les marchés fermant\nleurs positions et prenant leurs bénéfices. La deuxième partie est constituée de nouveaux acheteurs\narrivant sur le marché et ouvrant de nouvelles positions.\nResistance:\nLa résistance est créée en 2 parties. La première partie concerne les acheteurs sur les marchés fermant\nleurs positions et prenant leurs bénéfices. La deuxième partie est constituée de nouveaux vendeurs\narrivant sur le marché et ouvrant de nouvelles positions.\nSelon les conditions du marché, ces 2 parties peuvent se dérouler en même temps\nou être l’une après l’autre. Les vendeurs et les acheteurs vont créer le support/la\nrésistance à certains niveaux structurels spécifiques du marché, ce n'est pas\naléatoire. Il doit y avoir une motivation pour que quelqu'un ferme son trade ou en\nouvre un nouveau."
+},
+{
+"id": "p217",
+"page": 217,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Structure",
+"text": "ANALYSE TECHNIQUE\nMarket Structure\nAccumulation et distribution:\nC'est le mécanisme derrière les supports et les résistances.\nLa zone d'accumulation est l'endroit où les traders/institutions ouvrent/ajoutent des\npositions sur le marché. Ils ajoutent un achat/vente.\nLa zone de distribution est celle où les traders/institutions ferment\ntotalement/partiellement leurs positions sur le marché. Ils suppriment un achat/vente.\nCeci est très important. Plus les positions injectées sur le marché ou retirées du\nmarché sont grandes, plus la période d’accumulation/distribution sera longue. Par\nexemple, pour une grande institution financière qui ouvre plus de 100 000 lots, cela\npeut prendre plusieurs jours/semaines/mois pour accumuler ou distribuer leurs\npositions au complet. C'est pourquoi vous avez parfois des supports/résistances\nlongs et parfois des supports/résistances courts. En fonction de la longueur et de la\nvariation de prix d'un support/d'une résistance, vous pouvez définir la taille des\npositions des institutions."
+},
+{
+"id": "p223",
+"page": 223,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Structure",
+"text": "ANALYSE TECHNIQUE\nMarket Structure\nAccumulation et distribution:\nLes supports/résistances larges ont plus de chances d’être une correction du marché\nou un renversement de tendance. (Distribution et accumulation) C'est pourquoi ils sont\nplus longs, parce qu'ils ont les deux parties.\nLes petits supports/résistances ont plus de chance d’être une position ajoutant du\nniveau à la poursuite de la tendance. (Accumulation seulement)\nLes consolidations ne sont rien de plus que des niveaux élevés de distribution et\nd’accumulation, tout comme les grands supports/résistances.\nAvertissement: Les supports/résistances importants NE PEUVENT PAS être des\nzones d’accumulation seulement, mais PARFOIS, des supports/résistances plus\npetits PEUVENT être des zones de distribution et d’accumulation."
+},
+{
+"id": "p229",
+"page": 229,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Structure",
+"text": "ANALYSE TECHNIQUE\nMarket Structure\nAccumulation et distribution:\nPuisqu'une distribution peut être une correction ou un renversement de tendance, le seul\nmoyen de comprendre et de prédire où le marché se dirige est d'examiner et de\ncomprendre vos fondamentaux.\nVous serez alors en mesure de comprendre les motivations et le plan des institutions\nfinancières et vous pourrez prédire leur prochain mouvement sur le marché avec une\ngrande précision.\nPlus l’idée fondamentale est bonne, plus vous ferez des trades en sachant si les\nsupports/résistances sont des inversions ou des corrections. Et mieux vous saurez\ndans quelle direction la consolidation va break out."
+},
+{
+"id": "p233",
+"page": 233,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Structure",
+"text": "ANALYSE TECHNIQUE\nMarket Structure\nKey levels (D1, H4):\nNous allons mettre en évidence les zones de support/résistance les plus importantes de\nnotre graphique avec des niveaux clés.\nD1 sera en ligne complète et sera utile pour délimiter notre terrain de trading.\nH4 sera en ligne pointillé et sera utile pour identifier les obstacles pour profit\npartiel/ajout de positions.\nL'objectif est de toucher autant de zones que possible afin que nous ayons une\nindication claire des niveaux les plus importants de notre graphique. Cela nous aidera à\ncomprendre les mouvements du marché."
+},
+{
+"id": "p239",
+"page": 239,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Structure",
+"text": "ANALYSE TECHNIQUE\nMarket Structure\nKey levels (D1, H4):\nWide Open Space (WOS):\nLe Wide Open Space est l'espace entre deux niveaux clés quotidien (D1), il peut aller de\n100 à 500 pips.\nLe WOS est votre espace de jeu, vous devez donc comprendre les frontières du marché\npour pouvoir effectuer de bons trades.\nVotre objectif est de toujours vérifier que vous disposez de suffisamment d'espace.\nVous devez mesurer la distance entre le prix actuel et le niveau clé quotidien et vous\nassurer que vous disposez d'au moins 90 pips d'espace.\nSi l’espace est insuffisant, vous devez attendre que le marché brise le niveau clé D1 et\npasse au prochain WOS, où vous aurez plus d’espace pour faire votre trade."
+},
+{
+"id": "p245",
+"page": 245,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Structure",
+"text": "ANALYSE TECHNIQUE\nMarket Structure\nNiveaux Psychologiques:\nIl y a des prix sur le marché qui sont plus importants que d'autres, ce sont les niveaux psychologiques et\nsont basés sur des nombres arrondis. Le prix doit finir par 3 zéros (000) pour être considéré comme un\nniveau psychologique. Plus il y a de zéros, plus le niveau est fort.\nLes êtres humains étant des créatures logiques, ils aiment déconstruire le marché en segments\nsymétriques et négocier à ces niveaux.\nLes niveaux psychologiques sont les cousins des niveaux clés. Ils sont basés sur le même principe et\nremplissent la même fonction, qui consiste à déterminer où le prix va rebondir/rejeter et vous aider à\nconstruire votre transaction. Vous les utiliserez comme complément à vos niveaux clés.\nExemples:\nGBP/JPY 130.000\nEUR/USD 1.25000\nEURAUD 1.65000\nUSD/JPY 105.000"
+},
+{
+"id": "p247",
+"page": 247,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nIdentification de la tendance en D1, H4, H1\nVous devez identifier la tendance du marché sur 3 timeframes différents pour\ncomprendre l'histoire qui se cache derrière le graphique.\nVous allez examiner les 2 derniers sommets et les 2 creux pour identifier correctement\nvotre tendance.\nSur la période D1, vous regardez les GRANDS Highs et Lows.\nSur la période H4, vous examinez les MOYENS Highs et Lows.\nSur la période H1, vous regardez les PETITS Highs et Lows.\nSi vous avez un Higher High et un Higher Low, vous avez une tendance à la hausse.\nSi vous avez un Lower High et un Lower Low, vous avez une tendance à la baisse.\nSi vous avez une autre combinaison, par exemple un Higher High mais un Lower Low,\nvous avez une consolidation."
+},
+{
+"id": "p249",
+"page": 249,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nIdentification de la\ntendance en D1, H4, H1\nExemple:\nIdentification de\ntendance D1"
+},
+{
+"id": "p251",
+"page": 251,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nIdentification de la\ntendance en D1, H4, H1\nExample:\nIdentification de\ntendance D1\nDowntrend"
+},
+{
+"id": "p253",
+"page": 253,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nIdentification de la\ntendance en D1, H4, H1\nExample:\nIdentification de\ntendance H4"
+},
+{
+"id": "p255",
+"page": 255,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nIdentification de la\ntendance en D1, H4, H1\nExample:\nIdentification de\ntendance H4\nUptrend"
+},
+{
+"id": "p257",
+"page": 257,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nIdentification de la\ntendance en D1, H4, H1\nExample:\nIdentification de\ntendance H1"
+},
+{
+"id": "p259",
+"page": 259,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nIdentification de la\ntendance en D1, H4, H1\nExample:\nIdentification de\ntendance H1\nConsolidation"
+},
+{
+"id": "p261",
+"page": 261,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nPont entre analyse technique et analyse fondamentale\nCeci est extrêmement important, vous allez maintenant lier votre analyse graphique à\nvos idées fondamentales.\nVous devez expliquer fondamentalement la raison derrière les tendances sur nos 3\ntimeframes (D1,H4,H1).\nSur la période D1, vous prendrez toutes les informations fondamentales que vous avez\naccumulées au cours des 3 à 12 derniers mois et expliquez pourquoi nous sommes\ndans la tendance qui a été identifiée.\nSur la période H4, vous prendrez toutes les informations fondamentales que vous avez\naccumulées au cours des 4 à 12 dernières semaines et expliquez pourquoi nous\nsommes dans la tendance qui a été identifiée.\nSur la période H1, vous prendrez toutes les informations fondamentales que vous avez\naccumulées au cours des 1 à 30 derniers jours et expliquez pourquoi nous sommes\ndans la tendance qui a été identifiée."
+},
+{
+"id": "p263",
+"page": 263,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nPont entre analyse technique et analyse fondamentale\nMaintenant que vous avez expliqué et compris les tendances identifiées précédemment,\nvous devez résoudre le puzzle et prévoir le prochain mouvement du marché.\nComment pouvez-vous résoudre le puzzle? Le marché évolue et évolue constamment,\nce qui signifie que chaque scénario est un cas unique. Cependant, vous pouvez vous\nposer les questions suivantes pour vous guider:\nExiste-t-il un problème/conflit/situation négative avec la paire de devises analysée\nsur la période D1? (Analyse fondamentale sur l'identification de tendance D1)\nSi oui, le problème est-il résolu? Et si résolu, est-ce temporaire ou permanent? Dans\nquel timeframe a-t-il été résolu? (Correction ou annulation avec date d'effet)\nSi non, y a-t-il un problème à venir? Et est-ce à venir à court, moyen ou long terme?\nQuelle est l'importance de ce problème? Faire le lien avec les timeframes.\n(Continuation ou inversion avec une perspective temporelle)"
+},
+{
+"id": "p265",
+"page": 265,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nPont entre analyse technique et analyse fondamentale\nRépétez les mêmes questions pour les timeframes H4 et H1.\nVous allez maintenant utiliser votre logique et votre pensée critique pour résoudre l’\néquation et déterminer l’orientation du marché.\nExemple:\nD1 - Downtrend, H4 - Uptrend, H1 - Downtrend\nExiste-t-il un problème de marché dans mon analyse fondamentale du timeframe D1?\nOui. (expliquer le problème)\nCe problème a-t-il été résolu dans H4 ou H1?\nA été résolu en H4, mais temporairement. Le problème est revenu ces derniers jours en H1.\nRéponse finale: La tendance haussière H4 était une correction, mais maintenant la tendance\nbaissière D1 va reprendre car le problème n’a pas été totalement résolu. Le marché n'a pas de\nraison de monter, la tendance baissière de H1 marque le début de la continuation."
+},
+{
+"id": "p267",
+"page": 267,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nPont entre analyse technique et analyse fondamentale\nExemple:\nD1 - Uptrend, H4 - Uptrend, H1 - Downtrend\nExiste-t-il un problème de marché dans mon analyse fondamentale du timeframe D1?\nNon (explique la tendance haussière de D1)\nExiste-t-il un problème de marché dans mon analyse fondamentale du timeframe H4?\nNon (explique la tendance haussière de D1)\nExiste-t-il un problème de marché dans mon analyse fondamentale du timeframe H1?\nOui. (expliquer le problème)\nQuelle est la durée de ce problème et son importance par rapport au H4 et au D1?\nLe problème est grave, durera au moins quelques mois et pourrait toucher plusieurs devises.\nRéponse finale: La tendance baissière de H1 marque le début d’une nouvelle tendance, les\ntendances H4 et D1 suivront."
+},
+{
+"id": "p269",
+"page": 269,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nPont entre analyse technique et analyse fondamentale\nExemple:\nD1 - Downtrend, H4 - Uptrend, H1 - Consolidation\nExiste-t-il un problème de marché dans mon analyse fondamentale du timeframe D1?\nOui. (expliquer le problème)\nCe problème a-t-il été résolu dans H4 ou H1?\nA été résolu en H4 de manière permanente.\nExiste-t-il un problème de marché dans mon analyse fondamentale du timeframe H4?\nOui, quelque chose d'inattendu s'est produit et le problème précédent a refait surface.\nRéponse finale: La consolidation du timeframe H1 est due au fait que les institutions financières\ndoivent soudainement modifier leur plan en raison de l'événement inattendu. Ils ferment leurs\npositions précédentes et préparent leur plan pour la future tendance baissière."
+},
+{
+"id": "p271",
+"page": 271,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nMaintenant que vous connaissez la direction du marché et que vous comprenez\nexactement pourquoi, l'étape suivante consiste à identifier le(s) meilleur(s) point(s)\ntechnique(s) pour entrer une position dans le trade.\nComment allons-nous faire cela?\nÀ l’aide des courbes de trendlines, counter-trendlines, key level trendlines, channels et\ncounter-channels.\nVous pouvez en principe entrer dans le trade à tout moment sans analyse technique\ncomplète et avoir un bon taux de précision puisque vous connaissez la direction future\ndu marché, mais ce n'est évidemment pas optimal. Nous voulons construire la meilleure\nidée technique, extraire un maximum de pips."
+},
+{
+"id": "p273",
+"page": 273,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nIl existe 5 types de trendlines, qui font tous partie de la même famille. Ils seront utilisés\nexactement de la même manière en D1, H4 et H1.\nQu'est-ce qu'une ligne de tendance?\nLa ligne de tendance est une ligne qui relie les hauts et les bas, elle permet de prédire\noù le marché est le plus susceptible de rebondir, un peu comme un support ou une\nrésistance. Vous devez disposer d'au moins 2 points pour tracer la ligne de tendance, le\nplus qu’il y a de points le mieux c’est.\n3 règles à suivre pour tracer les 5 trendlines:\n1. Vous devez tracer votre trendline sur les mèches (wicks) autant que possible.\n2. Vous devez toucher autant de points que possible dans votre trajectoire, même si\ncela va un peu à l'encontre de la règle #1.\n3. Votre trendline doit être utile pour le prix actuel ou futur."
+},
+{
+"id": "p275",
+"page": 275,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\n5 types de trendlines:\n1. Trendline: Ligne qui suit la tendance actuelle.\n2. Counter-Trendline: Ligne qui va à l’inverse de la tendance actuelle.\n3. Key level Trendline: Ligne qui ne suit aucune tendance, mais agit comme un\nsupport/résistance. La plupart du temps, les chandeliers seront tranchés.\n4. Channel: Deux lignes de tendance parallèles qui suivent la tendance actuelle.\n5. Counter-Trend Channel: Deux counter-trendlines parallèles qui vont à l’encontre\nde la tendance actuelle."
+},
+{
+"id": "p279",
+"page": 279,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\n5 types de trendlines:\nCounter-Trendline"
+},
+{
+"id": "p281",
+"page": 281,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\n5 types de trendlines:\nKey Level Trendline"
+},
+{
+"id": "p285",
+"page": 285,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\n5 types de trendlines:\nCounter-Trend Channel"
+},
+{
+"id": "p287",
+"page": 287,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nAnalyse complète avec les trendlines\nD1"
+},
+{
+"id": "p289",
+"page": 289,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nAnalyse complète avec les trendlines\nH4"
+},
+{
+"id": "p291",
+"page": 291,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nAnalyse complète avec les trendlines\nH1"
+},
+{
+"id": "p293",
+"page": 293,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nMaintenant que vous avez tracé toutes vos lignes de tendance dans les trois\ntimeframes, comment trouvez-vous un trade technique et comment l'exécuter?\nDeux options:\n1. Break-Hook-Go\n2. Big Bounce\nBreak-Hook-Go\nBreak: Lorsqu'une ligne de tendance avec/sans autre élément de structure (support, résistance,\nniveau psychologique, etc.) est brisée.\nHook: Lorsque le prix revient sur les éléments cassés et le retouche.\nGo: Lorsque le marché nous confirme que le prix rebondit sur l'élément de structure.\nVous allez entrer dans le commerce après le GO. Si nous fermons au-dessous/au-dessus de la\nligne de tendance, le BHG est invalide."
+},
+{
+"id": "p295",
+"page": 295,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nMaintenant que vous avez tracé toutes vos lignes de tendance dans les trois\ntimeframes, comment trouvez-vous un trade technique et comment l'exécuter?\nDeux options:\n1. Break-Hook-Go\n2. Big Bounce\nBig Bounce\nGros rejet sur une confluence de lignes de tendance et d'éléments de structure (support,\nrésistance, niveau psychologique, etc.).\nVous entrerez directement sans confirmation, assurez-vous que votre idée fondamentale est\nsolide et que le niveau sélectionné pour le BB est également solide.\nSniper Entry"
+},
+{
+"id": "p297",
+"page": 297,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nAnalyse complète avec\nles trendlines\nBHG\nAvant"
+},
+{
+"id": "p299",
+"page": 299,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nAnalyse complète avec\nles trendlines\nBHG\nAprès"
+},
+{
+"id": "p301",
+"page": 301,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nAnalyse complète avec\nles trendlines\nBB\nAvant"
+},
+{
+"id": "p303",
+"page": 303,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nAnalyse complète avec\nles trendlines\nBB\nAprès"
+},
+{
+"id": "p305",
+"page": 305,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nCréation de l'idée technique\nLe BHG vous permettra d'avoir plus de confirmations pour entrer dans votre\ntransaction, mais vous manquerez quelques pips puisque vous entrez un peu plus tard\nqu'un BB.\nLe BB vous permettra d’obtenir une entrée parfaite et de maximiser vos pips.\nCependant, vous n’avez aucune confirmation, vous devriez donc faire plus attention et\nvérifier votre analyse.\nVous devrez jongler entre les deux techniques en fonction des conditions du marché, de\nvotre analyse fondamentale/technique et de votre expérience de trading.\nN'oubliez pas que pour réussir en trading, vous devez gérer les fondamentaux, les\ntechniques, le timing, le risque et les émotions."
+},
+{
+"id": "p307",
+"page": 307,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nChart patterns\nUn Chart Pattern est une action de prix spécifique qui a été formée dans une forme\nspécifique et qui a été répétée plusieurs fois sur le marché au cours des années.\nIls sont utilisés pour 3 raisons:\n1. Entrer dans un trade (avec confirmations fondamentales et autres)\n2. Ajouter des positions à votre trade\n3. Deuxième chance d'entrer dans le trade si vous avez manqué une occasion plus\ntôt\nIls seront tous utilisés de la même manière, qui est avec le Break-Hook-Go.\nUn Chart Pattern peut apparaître dans n’importe quel timeframe. Cependant, pour voir\nclairement le BHG, il faut parfois aller en M30 ou M10."
+},
+{
+"id": "p311",
+"page": 311,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\nIl existe une raison pour laquelle le marché respecte presque toujours les lignes de tendance,\nles supports, les resistances, etc.\nLa raison en est que les institutions ont des personnes/robots appelés Market Makers.\nLeur seul travail consiste à structurer le marché de manière logique et structurée, sans lui\npermettre de devenir aléatoire et chaotique. Ils sont les architectes et ingénieurs du marché.\nLe marché peut sembler aléatoire au premier abord, mais il est toujours structuré et organisé,\nrien n’est laissé au hasard, vraiment, il y a trop d’argent en jeu.\nSachant cela, de temps en temps, lorsque les institutions souhaitent réaliser un plan/une\nprojection spécifique, elles contactent leurs market makers et leur demanderont de concevoir\net de créer ce que j'appelle une tendance institutionnelle.\nElles se produisent environ 20% du temps sur le marché, mais lorsque nous les identifions, nous\npouvons en tirer profit."
+},
+{
+"id": "p313",
+"page": 313,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\nIl existe 5 règles pour déterminer si nous examinons une tendance institutionnelle:\n1. La tendance doit être représentée en H4 ou D1.\n2. L'angle de la tendance doit être autour de 45 degrés, elle doit être durable.\n3. La tendance doit être claire, à la hausse ou à la baisse, HH HL ou LH LL.\n4. Vous devez prouver que le heartline existe.\n5. Vous devez pouvoir compter les elliott waves."
+},
+{
+"id": "p315",
+"page": 315,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\n1- La tendance doit être représentée en H4 ou D1.\nH4"
+},
+{
+"id": "p317",
+"page": 317,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\n2- L'angle de la tendance doit être autour de 45 degrés, elle doit être durable.\nH4"
+},
+{
+"id": "p319",
+"page": 319,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\n3- La tendance doit être claire, à la hausse ou à la baisse, HH HL ou LH LL.\nH4"
+},
+{
+"id": "p323",
+"page": 323,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\nFib Channel\n4- Vous devez prouver que le heartline existe."
+},
+{
+"id": "p325",
+"page": 325,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\n4- Vous devez prouver que le heartline existe.\nLa zone #1 est l'endroit où commence le mouvement. Sera au bas d'une tendance\nhaussière et au sommet d'une tendance baissière.\nLa zone #4 est l'endroit où le mouvement se termine et la correction commence.\nLorsque le marché dépasse le heartline dans la DIRECTION de la tendance actuelle,\nnous avons 85% de chances d'atteindre la fin de la zone 4.\nLes Market Makers et les Robots sont à l'origine de ce marché structuré, rien n'est\nlaissé au hasard."
+},
+{
+"id": "p333",
+"page": 333,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\n5- Vous devez pouvoir compter les elliott waves.\nVagues d'impulsion: 1-3-5\nVagues de correction: 2-4\n5 vagues au total mais peut aller jusqu'à 7 ou 9 de temps en temps\n3 règles à suivre:\n1. La vague #2 ne peut pas être plus basse/haute que le début de la vague #1\n2. La vague #3 ne peut pas être la plus petite des vagues d’impulsions\n3. La vague #4 ne peut pas venir plus bas/haut que la fin de la vague #1\nLes vagues d'Elliott sont un moyen de synchroniser les graphiques des institutions\nfinancières. C’est une norme mondiale."
+},
+{
+"id": "p335",
+"page": 335,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\n5- Vous devez pouvoir compter les elliott waves. ABC Correction Wave"
+},
+{
+"id": "p337",
+"page": 337,
+"section": "ANALYSE TECHNIQUE",
+"title": "Market Trend",
+"text": "ANALYSE TECHNIQUE\nMarket Trend\nTendance Institutionnelle\nQue se passe-t-il si la tendance institutionnelle ne suit pas toutes les règles à la\nperfection?\nIl devient un canal structuré, entre le canal et la tendance institutionnelle.\nLa règle des 85% de la ligne de cœur ne sera pas appliquée et il n’y aura pas d’ondes\nelliott. Cependant, le marché reste très structuré et plus prévisible qu'un canal classique.\nQue pouvez-vous trader dans une tendance institutionnelle?\nVague 3\nB-C Correction Wave de la vague 4\nVague 5"
+},
+{
+"id": "p349",
+"page": 349,
+"section": "ANALYSE TECHNIQUE",
+"title": "Fibonacci",
+"text": "ANALYSE TECHNIQUE\nFibonacci\nNiveaux de retracement et d'extension\nMaintenant que nous avons notre point d’entrée pour effectuer notre transaction, nous\ndevons le confirmer et déterminer où nous placerons notre Stop Loss et Take Profit.\nNous choisirons toujours notre SL et TP avec Fibonacci et la confluence de structure.\nIl y a toujours deux types de mouvement sur le marché:\nJambe impulsive: créera un plus haut ou un plus bas (pousse le prix)\nJambe corrective: NE créera PAS un plus haut ou un plus bas (correction du prix)\nPour utiliser correctement notre outil fibonacci, nous devons trouver la dernière jambe\nimpulsive du mouvement. Ensuite, nous la mesurons et cela nous donneras toutes les\nproportions nécessaires pour configurer notre trade correctement.\nTrès important: Fibonacci ne nous dit pas si le marché va monter ou descendre, vous devriez\ndéjà le savoir avant de l'utiliser. Il ne fera que confirmer notre position et placer notre SL TP."
+},
+{
+"id": "p361",
+"page": 361,
+"section": "ANALYSE TECHNIQUE",
+"title": "Une fois que vous avez trouvé la dernière",
+"text": "ANALYSE TECHNIQUE\nUne fois que vous avez trouvé la dernière\njambe impulsive, vous tracez votre fib\ndans le sens du mouvement de mèche à\nFibonacci mèche.\nNiveaux de retracement et d'extension"
+},
+{
+"id": "p367",
+"page": 367,
+"section": "ANALYSE TECHNIQUE",
+"title": "Fibonacci",
+"text": "ANALYSE TECHNIQUE\nFibonacci\nNiveaux de retracement et d'extension\nNuméros noirs: Niveaux de retracement (entrer BHG ou BB) (entre 0 et 100%)\nNuméros verts: Niveaux d'extension (Take Profit)\nNuméros rouges: Niveaux de retracement et d'extension (Stop Loss)\nNuméros noirs: Niveaux de retracement (entrer BHG ou BB):\n38.2%: Utilisé pour BHG UNIQUEMENT, vous devez vous attendre au hook à ce niveau.\n50.0%: Niveau hybride, peut être utilisé pour BHG ou BB. Niveau psychologique.\n61.8%: Grand niveau de retracement, vous trouverez votre entrée BB à ce niveau.\n78.6%: Utilisé pour MEGA Big Bounce, niveau institutionnel."
+},
+{
+"id": "p369",
+"page": 369,
+"section": "ANALYSE TECHNIQUE",
+"title": "Fibonacci",
+"text": "ANALYSE TECHNIQUE\nFibonacci\nNiveaux de retracement et d'extension\nNuméros noirs: Niveaux de retracement (entrer BHG ou BB) (entre 0 et 100%)\nNuméros verts: Niveaux d'extension (Take Profit)\nNuméros rouges: Niveaux de retracement et d'extension (Stop Loss)\nNuméros rouges: Niveaux de retracement et d'extension (Stop Loss):\n88.6% and 113.0%: Les deux seront utilisés pour le Stop Loss, en fonction de la\nconfiguration de la transaction et de votre point d’entrée, vous choisirez l’un ou l’autre.\nExaminez vos éléments de structure (confluence) et assurez-vous de disposer de\nsuffisamment d'espace pour votre SL.\nEn règle générale, lorsque vous entrez des niveaux de fib de 38,2% à 61,8%, vous optez\npour 88,6% et lorsque vous entrez des niveaux de fib de 61,8 à 78,6%, vous choisissez de\n113%."
+},
+{
+"id": "p371",
+"page": 371,
+"section": "ANALYSE TECHNIQUE",
+"title": "Fibonacci",
+"text": "ANALYSE TECHNIQUE\nFibonacci\nNiveaux de retracement et d'extension\nNuméros noirs: Niveaux de retracement (entrer BHG ou BB) (entre 0 et 100%)\nNuméros verts: Niveaux d'extension (Take Profit)\nNuméros rouges: Niveaux de retracement et d'extension (Stop Loss)\nNuméros verts: Niveaux d'extension (Take Profit):\n-27.2% ou 127.2% -127.2% ou 227.2% -227.2% ou 327.2%\n-61.8% ou 161.8% -161.8% ou 261.8% -261.8% ou 361.8%\n-100% ou 200% -200% ou 300%\nSeront tous utilisés de la même manière, pour placer votre take profit. Vous choisirez un\nniveau en fonction des éléments de structure (confluence) et de la taille de votre idée\nfondamentale. N'hésitez pas à prendre des profits partiels sur ces niveaux."
+},
+{
+"id": "p407",
+"page": 407,
+"section": "ANALYSE TECHNIQUE",
+"title": "Final TP",
+"text": "ANALYSE TECHNIQUE\nFinal TP\n815 pips\nFibonacci 9 Jours\nNiveaux de retracement et d'extension"
+},
+{
+"id": "p409",
+"page": 409,
+"section": "ANALYSE TECHNIQUE",
+"title": "Divergence",
+"text": "ANALYSE TECHNIQUE\nDivergence\nRSI & MACD\nLa dernière étape de notre plan de trading consiste à revérifier notre transaction et à la\nconfirmer avant de l'exécuter. Nous devons vérifier le RSI et le MACD pour savoir s’il\nexiste un agenda caché de la part des institutions.\nRSI:\nL'indice de force relative est un indicateur de volume, affichant la force des acheteurs et\ndes vendeurs.\nLorsque le RSI est élevé, nous avons plus d’acheteurs et quand il est bas, nous avons\nplus de vendeurs.\nNous utiliserons cet indicateur principalement en H4 pour la convergence ou la\ndivergence.\nParamètres par défaut."
+},
+{
+"id": "p411",
+"page": 411,
+"section": "ANALYSE TECHNIQUE",
+"title": "Divergence",
+"text": "ANALYSE TECHNIQUE\nDivergence\nRSI & MACD\nLa dernière étape de notre plan de trading consiste à revérifier notre transaction et à la\nconfirmer avant de l'exécuter. Nous devons vérifier le RSI et le MACD pour savoir s’il\nexiste un agenda caché de la part des institutions.\nRSI:"
+},
+{
+"id": "p413",
+"page": 413,
+"section": "ANALYSE TECHNIQUE",
+"title": "Divergence",
+"text": "ANALYSE TECHNIQUE\nDivergence\nRSI & MACD\nLa dernière étape de notre plan de trading consiste à revérifier notre transaction et à la\nconfirmer avant de l'exécuter. Nous devons vérifier le RSI et le MACD pour savoir s’il\nexiste un agenda caché de la part des institutions.\nMACD:\nLe Moving Average Convergence Divergence est un indicateur de volume, tout comme le RSI, affichant\nla force des acheteurs et des vendeurs.\nLa différence avec le RSI est que nous avons les lignes ZERO LINE et SIGNAL LINE.\nLa ligne zéro nous indique que lorsque nous passons du côté achat ou côté vente, nous confirmons que\nla divergence a pris effet.\nLa ligne de signal, quand à l'intérieur de l'histogramme, nous indique un grand momentum dans le prix.\nNous utiliserons cet indicateur principalement dans H4 pour la convergence ou la divergence.\nParamètres d'histogramme sans moyenne mobile."
+},
+{
+"id": "p415",
+"page": 415,
+"section": "ANALYSE TECHNIQUE",
+"title": "Divergence",
+"text": "ANALYSE TECHNIQUE\nDivergence\nRSI & MACD\nLa dernière étape de notre plan de trading consiste à vérifier\nnotre transaction et à la confirmer avant de l'exécuter.\nNous devons vérifier le RSI et le MACD pour savoir s’il existe un\nagenda caché de la part des institutions.\nMACD:"
+},
+{
+"id": "p417",
+"page": 417,
+"section": "ANALYSE TECHNIQUE",
+"title": "Divergence",
+"text": "ANALYSE TECHNIQUE\nDivergence\nConvergence vs Divergence\nLorsque nous sommes sur le point de faire notre trade, nous devons vérifier s'il y a\nconvergence ou divergence.\nUne convergence nous indique qu'il n'y a pas d'agenda caché et que nous avons le feu\nvert pour faire le trade.\nUne divergence nous indique qu'il pourrait y avoir un agenda caché et que nous aurions\nun feu jaune ou rouge en fonction des confirmations du RSI MACD.\nConvergence:\nLorsque le RSI et le MACD suivent les hauts et les bas du graphique. Cela annonce une\ncontinuation du mouvement.\nDivergence:\nLorsque le RSI et le MACD vont à l’encontre des hauts et des bas du graphique. Cela\nannonce une correction ou un renversement."
+},
+{
+"id": "p425",
+"page": 425,
+"section": "ANALYSE TECHNIQUE",
+"title": "Divergence",
+"text": "ANALYSE TECHNIQUE\nDivergence\nMoving Averages\nC'est l'un de mes outils préférés, nous allons utiliser les moyennes mobiles comme\néléments de structure, tout comme un support/résistance ou une trendline.\nIls seront ajoutés à notre confluence lorsque nous traderons un BHG ou un BB.\nSera également utilisé comme un obstacle pour prendre un profit partiel ou complet.\nIls ne sont utiles que dans une tendance, quand nous avons une consolidation, ils ont tendance\nà devenir chaotiques.\nNous allons utiliser la MA régulière 50 - 100 - 200 en D1 - H4 - H1\nIls sont basés sur la moyenne des prix des derniers chandeliers 50/100/200.\nLes institutions financières utilisent les MA avec ces paramètres. Ils sont une grande partie de\nleur trading.\n50 MA - Rouge\n100 MA - Vert\n200 MA - Bleu"
+}
+]
+}

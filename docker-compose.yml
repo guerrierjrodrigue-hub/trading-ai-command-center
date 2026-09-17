@@ -1,0 +1,67 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-trading}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_in_production}
+      POSTGRES_DB: ${POSTGRES_DB:-trading_ai}
+    # Bound to localhost only: the app reaches Postgres over the compose network
+    # (host "db"), so the DB is never exposed on the public internet — important
+    # when the app runs on a cloud server with a public IP.
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-trading} -d ${POSTGRES_DB:-trading_ai}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      # Inside the compose network the DB host is the service name `db`.
+      DATABASE_URL: postgresql://${POSTGRES_USER:-trading}:${POSTGRES_PASSWORD:-change_me_in_production}@db:5432/${POSTGRES_DB:-trading_ai}?schema=public
+      AUTH_SECRET: ${AUTH_SECRET:-please_generate_a_long_random_secret_at_least_32_chars}
+      SESSION_MAX_AGE: ${SESSION_MAX_AGE:-604800}
+      AI_PROVIDER: ${AI_PROVIDER:-mock}
+      AI_MODEL: ${AI_MODEL:-}
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_BASE_URL: ${AI_BASE_URL:-}
+      MARKET_PROVIDER: ${MARKET_PROVIDER:-mock}
+      MARKET_API_KEY: ${MARKET_API_KEY:-}
+      MARKET_BASE_URL: ${MARKET_BASE_URL:-}
+      PAPER_STARTING_CAPITAL: ${PAPER_STARTING_CAPITAL:-10000}
+      PAPER_FEE_BPS: ${PAPER_FEE_BPS:-10}
+      APP_URL: ${APP_URL:-http://localhost:3000}
+      # Real stocks/ETF (Twelve Data)
+      STOCKS_API_KEY: ${STOCKS_API_KEY:-}
+      # Real forex + gold data (OANDA practice/demo account)
+      OANDA_API_TOKEN: ${OANDA_API_TOKEN:-}
+      OANDA_ACCOUNT_ID: ${OANDA_ACCOUNT_ID:-}
+      OANDA_ENV: ${OANDA_ENV:-practice}
+      # Broker foundation (read-only)
+      BROKER_PROVIDER: ${BROKER_PROVIDER:-paper}
+      BROKER_TRADING_ENABLED: ${BROKER_TRADING_ENABLED:-false}
+      BROKER_API_KEY: ${BROKER_API_KEY:-}
+      BROKER_API_SECRET: ${BROKER_API_SECRET:-}
+      BROKER_BASE_URL: ${BROKER_BASE_URL:-}
+      # Multi-user controls
+      ALLOW_REGISTRATION: ${ALLOW_REGISTRATION:-true}
+      SIGNUP_INVITE_CODE: ${SIGNUP_INVITE_CODE:-}
+      # Telegram notifications
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
