@@ -14,6 +14,8 @@ RUN npm install
 
 COPY . .
 RUN npx prisma generate
+ENV NODE_OPTIONS=--max-old-space-size=1536
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
 # ---------- Runner ----------
