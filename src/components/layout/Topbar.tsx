@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Command, LogOut, Search } from "lucide-react";
+import { Command, LogOut, Menu, Search } from "lucide-react";
 import { apiSend } from "@/lib/client";
 
 export function Topbar({ userName }: { userName: string }) {
@@ -23,15 +23,24 @@ export function Topbar({ userName }: { userName: string }) {
 
   return (
     <header className="flex h-16 items-center justify-between gap-4 border-b border-border bg-bg-soft px-4 md:px-6">
-      <form onSubmit={go} className="relative w-full max-w-sm">
-        <Search className="pointer-events-none absolute left-3 top-2.5 h-4 w-4 text-faint" />
-        <input
-          value={symbol}
-          onChange={(e) => setSymbol(e.target.value)}
-          placeholder="Rechercher un actif (ex. BTC, AAPL, EUR/USD)…"
-          className="input pl-9"
-        />
-      </form>
+      <div className="flex min-w-0 flex-1 items-center gap-3">
+        <button
+          onClick={() => window.dispatchEvent(new Event("tacc:toggle-nav"))}
+          className="btn-ghost shrink-0 md:hidden"
+          aria-label="Ouvrir le menu"
+        >
+          <Menu className="h-5 w-5" />
+        </button>
+        <form onSubmit={go} className="relative w-full max-w-sm">
+          <Search className="pointer-events-none absolute left-3 top-2.5 h-4 w-4 text-faint" />
+          <input
+            value={symbol}
+            onChange={(e) => setSymbol(e.target.value)}
+            placeholder="Rechercher un actif (ex. BTC, AAPL, EUR/USD)…"
+            className="input pl-9"
+          />
+        </form>
+      </div>
       <div className="flex items-center gap-3">
         <button
           onClick={() => window.dispatchEvent(new Event("tacc:open-command"))}
