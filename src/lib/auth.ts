@@ -49,7 +49,7 @@ export async function verifySessionToken(
 export async function setSessionCookie(token: string): Promise<void> {
   cookies().set(SESSION_COOKIE, token, {
     httpOnly: true,
-    secure: env.isProd,
+    secure: env.authCookieSecure,
     sameSite: "lax",
     path: "/",
     maxAge: env.sessionMaxAge,

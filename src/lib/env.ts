@@ -20,15 +20,22 @@ function bool(key: string, fallback = false): boolean {
   return v.toLowerCase() === "true" || v === "1";
 }
 
+const isProd = str("NODE_ENV") === "production";
+
 export const env = {
   nodeEnv: str("NODE_ENV", "development"),
-  isProd: str("NODE_ENV") === "production",
+  isProd,
   appUrl: str("APP_URL", "http://localhost:3000"),
 
   databaseUrl: str("DATABASE_URL"),
 
   authSecret: str("AUTH_SECRET", "dev-insecure-secret-change-me-please-32chars"),
   sessionMaxAge: num("SESSION_MAX_AGE", 60 * 60 * 24 * 7),
+  // Whether the session cookie gets the `secure` flag (HTTPS-only). Defaults
+  // to isProd (browsers reject `secure` cookies over plain HTTP); set
+  // AUTH_COOKIE_SECURE=false to allow login when serving prod over HTTP
+  // (e.g. a bare IP without TLS), or =true to force it in dev.
+  authCookieSecure: bool("AUTH_COOKIE_SECURE", isProd),
   // Multi-user controls. Registration is open by default (personal use);
   // set ALLOW_REGISTRATION=false to close it, or SIGNUP_INVITE_CODE to gate it.
   allowRegistration: bool("ALLOW_REGISTRATION", true),
