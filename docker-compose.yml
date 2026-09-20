@@ -20,9 +20,7 @@ services:
       retries: 10
 
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/guerrierjrodrigue-hub/trading-ai-command-center:latest
     restart: unless-stopped
     depends_on:
       db:
