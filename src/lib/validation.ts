@@ -106,7 +106,9 @@ export const backtestRunSchema = z.object({
     "V2H4_GOLD",
   ]),
   startingCapital: z.number().positive().default(10000),
-  limit: z.number().int().min(50).max(1000).default(300),
+  // Max matches MAX_PAGINATED_CANDLES (oanda-provider.ts) — the OANDA-backed
+  // path pages up to this; other providers are internally clamped lower.
+  limit: z.number().int().min(50).max(40_000).default(300),
   // Strategy knobs (all optional).
   fast: z.number().int().positive().max(400).optional(),
   slow: z.number().int().positive().max(400).optional(),

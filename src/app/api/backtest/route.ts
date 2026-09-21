@@ -3,7 +3,9 @@ import { prisma } from "@/lib/prisma";
 import { env } from "@/lib/env";
 import { backtestRunSchema } from "@/lib/validation";
 import { getMarketDataProvider } from "@/services/market";
+import { OandaProvider } from "@/services/market/oanda-provider";
 import { runSplitBacktest } from "@/services/backtest/engine";
+import type { Candle } from "@/services/market/types";
 
 export async function GET() {
   const auth = await authUserId();
@@ -27,8 +29,19 @@ export async function POST(req: Request) {
   const feeBps = setting?.feeBps ?? env.paper.feeBps;
 
   try {
-    const provider = getMarketDataProvider();
-    const candles = await provider.getCandles(d.symbol, d.timeframe, d.limit);
+    // Deep history for forex/gold (OANDA): page past OANDA's 5000-candle
+    // per-request cap so slow strategies (e.g. V2-H4 Or, H4 Donchian) get
+    // enough history to have a meaningful number of trades. Other asset
+    // classes keep their existing single-request behavior, clamped to the
+    // limit they already supported (1000), unchanged.
+    const oanda = new OandaProvider();
+    let candles: Candle[];
+    if (oanda.covers(d.symbol) && env.oanda.apiToken && env.oanda.accountId) {
+      candles = await oanda.fetchCandlesPaginated(d.symbol, d.timeframe, d.limit);
+    } else {
+      const provider = getMarketDataProvider();
+      candles = await provider.getCandles(d.symbol, d.timeframe, Math.min(d.limit, 1000));
+    }
     if (candles.length < 30) return fail("Not enough candles to backtest", 422);
 
     // Split backtest (Phase 2B): full period + in-sample/out-of-sample halves,

@@ -8,6 +8,22 @@ import { apiSend } from "@/lib/client";
 import { cn, formatCurrency, formatPct } from "@/lib/utils";
 import type { BacktestResult, StrategyType } from "@/services/backtest/engine";
 import { strategyFingerprint } from "@/services/bot/strategies/v2h4-gold";
+import { TIMEFRAME_SECONDS } from "@/services/market/types";
+
+type PeriodKey = "1m" | "3m" | "6m" | "1y";
+const PERIODS: { value: PeriodKey; label: string; days: number }[] = [
+  { value: "1m", label: "1 mois", days: 30 },
+  { value: "3m", label: "3 mois", days: 90 },
+  { value: "6m", label: "6 mois", days: 180 },
+  { value: "1y", label: "1 an", days: 365 },
+];
+
+/** How many candles a period represents at a given timeframe, clamped to the
+ * OANDA pagination hard cap (MAX_PAGINATED_CANDLES in oanda-provider.ts). */
+function candlesForPeriod(days: number, timeframe: string): number {
+  const seconds = TIMEFRAME_SECONDS[timeframe as keyof typeof TIMEFRAME_SECONDS] ?? 86_400;
+  return Math.min(40_000, Math.max(50, Math.ceil((days * 86_400) / seconds)));
+}
 
 const STRATEGIES: { value: StrategyType; label: string; hint: string }[] = [
   { value: "EMA_CROSS", label: "EMA Crossover", hint: "Long quand EMA rapide > EMA lente" },
@@ -25,6 +41,7 @@ const STRATEGIES: { value: StrategyType; label: string; hint: string }[] = [
 export default function BacktestingPage() {
   const [symbol, setSymbol] = useState("BTC");
   const [timeframe, setTimeframe] = useState("1D");
+  const [period, setPeriod] = useState<PeriodKey>("3m");
   const [strategy, setStrategy] = useState<StrategyType>("EMA_CROSS");
   const [capital, setCapital] = useState("10000");
   const [fast, setFast] = useState("12");
@@ -53,7 +70,7 @@ export default function BacktestingPage() {
         timeframe,
         strategy,
         startingCapital: Number(capital) || 10000,
-        limit: 300,
+        limit: candlesForPeriod(PERIODS.find((p) => p.value === period)?.days ?? 90, timeframe),
       };
       if (strategy === "EMA_CROSS" || strategy === "MACD") {
         body.fast = Number(fast);
@@ -102,7 +119,13 @@ export default function BacktestingPage() {
           <div>
             <label className="label">Timeframe</label>
             <select className="input" value={timeframe} onChange={(e) => setTimeframe(e.target.value)}>
-              {["1h", "4h", "1D", "1W"].map((t) => <option key={t}>{t}</option>)}
+              {["15m", "1h", "4h", "1D", "1W"].map((t) => <option key={t}>{t}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="label">Période d'historique</label>
+            <select className="input" value={period} onChange={(e) => setPeriod(e.target.value as PeriodKey)}>
+              {PERIODS.map((p) => <option key={p.value} value={p.value}>{p.label}</option>)}
             </select>
           </div>
           <div className="col-span-2">
@@ -135,6 +158,12 @@ export default function BacktestingPage() {
           {strategy === "TREND_FOLLOWING" && (
             <div><label className="label">Période SMA</label><input className="input" value={smaPeriod} onChange={(e) => setSmaPeriod(e.target.value)} /></div>
           )}
+
+          <p className="col-span-2 text-xs text-faint md:col-span-4">
+            La période choisie est pleinement respectée pour le forex et l'or (via OANDA, avec pagination
+            jusqu'à ~1 an d'historique) ; pour les autres actifs (crypto, actions/ETF), elle reste plafonnée
+            à l'historique déjà disponible en un seul appel (≈1000 bougies).
+          </p>
 
           <div className="col-span-2 flex items-end md:col-span-4">
             <button type="submit" className="btn-primary" disabled={loading}>

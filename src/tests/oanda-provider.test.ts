@@ -1,5 +1,7 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
 import type { OandaProvider as OandaProviderType } from "@/services/market/oanda-provider";
+import { MAX_PAGINATED_CANDLES, dedupeCandlesByTime } from "@/services/market/oanda-provider";
+import type { Candle } from "@/services/market/types";
 
 /**
  * OANDA provider: symbol coverage, mid-price parsing, weekend/non-tradeable
@@ -116,5 +118,94 @@ describe("OandaProvider", () => {
     const out = await p.getQuotes(["BTC", "AAPL"]);
     expect(out).toEqual([]);
     expect(fetchMock).not.toHaveBeenCalled(); // nothing mapped -> no API call
+  });
+});
+
+/**
+ * fetchCandlesPaginated: pages backward via `to`, honoring whatever `count`
+ * each request asked for — a faithful-enough OANDA simulation to test the
+ * loop's stopping conditions without a real network call. Pages never
+ * overlap by construction here (each page's newest bar is exactly `to`),
+ * which is what lets "stops at target" / "hard cap" be asserted precisely;
+ * the dedup safety net itself is tested separately and directly below.
+ */
+const NOW = 1_700_000_000;
+const M15_SECONDS = 900;
+
+function fakeOandaCandlePage(url: string) {
+  const u = new URL(url);
+  const count = Number(u.searchParams.get("count"));
+  const to = u.searchParams.get("to");
+  const newest = to != null ? Number(to) : NOW;
+  const candles = Array.from({ length: count }, (_, i) => {
+    const t = newest - (count - 1 - i) * M15_SECONDS;
+    return { complete: true, volume: 1, time: `${t}.000000000`, mid: { o: "2600", h: "2601", l: "2599", c: "2600.5" } };
+  });
+  return jsonResponse({ candles });
+}
+
+describe("fetchCandlesPaginated", () => {
+  it("stops exactly at target, issuing multiple requests past the 5000-per-call cap", async () => {
+    const p = await loadProvider();
+    const fetchMock = vi.fn(async (url: string) => fakeOandaCandlePage(url));
+    vi.stubGlobal("fetch", fetchMock);
+
+    const candles = await p.fetchCandlesPaginated("XAU/USD", "15m", 7500);
+
+    expect(candles).toHaveLength(7500);
+    expect(fetchMock.mock.calls.length).toBeGreaterThanOrEqual(2); // > 5000 forces pagination
+    // Oldest -> newest, strictly increasing, no duplicate timestamps.
+    for (let i = 1; i < candles.length; i++) expect(candles[i].time).toBeGreaterThan(candles[i - 1].time);
+  });
+
+  it("never returns more than MAX_PAGINATED_CANDLES, even if far more is requested", async () => {
+    const p = await loadProvider();
+    const fetchMock = vi.fn(async (url: string) => fakeOandaCandlePage(url));
+    vi.stubGlobal("fetch", fetchMock);
+
+    const candles = await p.fetchCandlesPaginated("XAU/USD", "15m", 999_999);
+
+    expect(candles.length).toBe(MAX_PAGINATED_CANDLES);
+    // Bounded number of HTTP calls (~MAX/5000 pages), not one per candle.
+    expect(fetchMock.mock.calls.length).toBeLessThanOrEqual(Math.ceil(MAX_PAGINATED_CANDLES / 5000) + 1);
+  });
+
+  it("stops early when OANDA runs out of history (a page comes back short)", async () => {
+    const p = await loadProvider();
+    const fetchMock = vi.fn(async (url: string) => {
+      const u = new URL(url);
+      const count = Number(u.searchParams.get("count"));
+      // Simulate reaching the start of available history: fewer bars than asked.
+      return fakeOandaCandlePage(url.replace(`count=${count}`, `count=${Math.min(count, 3)}`));
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    const candles = await p.fetchCandlesPaginated("XAU/USD", "15m", 10_000);
+
+    expect(candles.length).toBeLessThan(10_000);
+    expect(fetchMock).toHaveBeenCalledTimes(1); // stopped after the first short page
+  });
+});
+
+describe("dedupeCandlesByTime", () => {
+  function mkCandle(time: number): Candle {
+    return { time, open: 1, high: 1, low: 1, close: 1, volume: 1 };
+  }
+
+  it("removes duplicate timestamps from overlapping page joins and sorts ascending", () => {
+    // Two "pages" reintroducing the boundary candle (time=300), out of order.
+    const pageA = [mkCandle(100), mkCandle(200), mkCandle(300)];
+    const pageB = [mkCandle(300), mkCandle(400), mkCandle(500)];
+    const out = dedupeCandlesByTime([...pageA, ...pageB]);
+    expect(out.map((c) => c.time)).toEqual([100, 200, 300, 400, 500]);
+  });
+
+  it("is a no-op on already-unique, already-sorted input", () => {
+    const input = [mkCandle(1), mkCandle(2), mkCandle(3)];
+    expect(dedupeCandlesByTime(input).map((c) => c.time)).toEqual([1, 2, 3]);
+  });
+
+  it("handles empty input", () => {
+    expect(dedupeCandlesByTime([])).toEqual([]);
   });
 });
