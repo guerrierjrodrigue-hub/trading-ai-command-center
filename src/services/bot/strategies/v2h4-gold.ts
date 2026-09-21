@@ -28,6 +28,34 @@ export const ATR_PERIOD = 14;
 export const SL_ATR_MULT = 1.5;
 export const TP_R_MULT = 3;
 export const DEFAULT_RISK_PCT = 1;
+
+/** The exact tradeable parameters of this strategy — see strategyFingerprint(). */
+export const V2H4_CONFIG = {
+  instrument: "XAU/USD",
+  donchianPeriod: DONCHIAN_PERIOD,
+  atrPeriod: ATR_PERIOD,
+  stopAtrMultiple: SL_ATR_MULT,
+  takeProfitR: TP_R_MULT,
+} as const;
+
+function toHex(bytes: ArrayBuffer): string {
+  return [...new Uint8Array(bytes)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+/**
+ * SHA-256 fingerprint of V2H4_CONFIG's canonical (key-sorted) JSON. Lets the
+ * dashboard show, right next to the strategy name, a short hash proving the
+ * live parameters match whatever was backtested — any change to the config
+ * changes this value. Uses the standard Web Crypto API (available in Node
+ * and in the browser), so it's safe to call from a client component too.
+ */
+export async function strategyFingerprint(): Promise<string> {
+  const sortedKeys = Object.keys(V2H4_CONFIG).sort();
+  const canonical: Record<string, unknown> = {};
+  for (const key of sortedKeys) canonical[key] = (V2H4_CONFIG as Record<string, unknown>)[key];
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(canonical)));
+  return toHex(digest);
+}
 /** M15 bars fetched for the dedicated OANDA integration — comfortably covers
  * more than DONCHIAN_PERIOD+1 (56) closed H4 bars, with margin for ATR warmup
  * and weekend/holiday gaps: 1200 M15 / 16 per H4 bar ~= 75 H4 bars. */

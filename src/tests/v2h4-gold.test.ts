@@ -6,6 +6,7 @@ import {
   donchianSignal,
   latestClosedSignal,
   levels,
+  strategyFingerprint,
 } from "@/services/bot/strategies/v2h4-gold";
 
 const H4_SECONDS = 4 * 60 * 60;
@@ -141,5 +142,19 @@ describe("calculateUnits", () => {
   it("returns 0 for non-positive inputs", () => {
     expect(calculateUnits(0, 40)).toBe(0);
     expect(calculateUnits(20_000, 0)).toBe(0);
+  });
+});
+
+describe("strategyFingerprint", () => {
+  it("is a 64-character lowercase hex string (SHA-256)", async () => {
+    const fp = await strategyFingerprint();
+    expect(fp).toHaveLength(64);
+    expect(fp).toMatch(/^[0-9a-f]{64}$/);
+  });
+
+  it("is stable across calls (deterministic config -> deterministic hash)", async () => {
+    const a = await strategyFingerprint();
+    const b = await strategyFingerprint();
+    expect(a).toBe(b);
   });
 });

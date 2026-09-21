@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FlaskConical } from "lucide-react";
 import { Badge, Card, ErrorNote, SectionTitle, Spinner, Stat } from "@/components/ui";
 import { EquityCurveChart } from "@/components/charts/PortfolioCharts";
 import { apiSend } from "@/lib/client";
 import { cn, formatCurrency, formatPct } from "@/lib/utils";
 import type { BacktestResult, StrategyType } from "@/services/backtest/engine";
+import { strategyFingerprint } from "@/services/bot/strategies/v2h4-gold";
 
 const STRATEGIES: { value: StrategyType; label: string; hint: string }[] = [
   { value: "EMA_CROSS", label: "EMA Crossover", hint: "Long quand EMA rapide > EMA lente" },
@@ -34,6 +35,11 @@ export default function BacktestingPage() {
   const [lookback, setLookback] = useState("20");
   const [smaPeriod, setSmaPeriod] = useState("200");
   const [result, setResult] = useState<BacktestResult | null>(null);
+  const [v2h4Fingerprint, setV2h4Fingerprint] = useState<string | null>(null);
+
+  useEffect(() => {
+    void strategyFingerprint().then((h) => setV2h4Fingerprint(h.slice(0, 12)));
+  }, []);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -136,6 +142,9 @@ export default function BacktestingPage() {
             </button>
             <span className="ml-3 self-center text-xs text-faint">
               {STRATEGIES.find((s) => s.value === strategy)?.hint}
+              {strategy === "V2H4_GOLD" && v2h4Fingerprint && (
+                <span className="font-mono"> · empreinte #{v2h4Fingerprint}</span>
+              )}
             </span>
           </div>
         </form>

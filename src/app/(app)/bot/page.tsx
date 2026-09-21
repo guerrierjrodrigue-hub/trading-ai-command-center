@@ -5,6 +5,7 @@ import { AlertTriangle, Bot, Play, Power } from "lucide-react";
 import { Badge, Card, Empty, ErrorNote, PaperBadge, ScoreBar, SectionTitle, Spinner, TrendBadge } from "@/components/ui";
 import { apiSend, useFetch } from "@/lib/client";
 import { cn, formatCurrency } from "@/lib/utils";
+import { strategyFingerprint } from "@/services/bot/strategies/v2h4-gold";
 
 interface BotConfig {
   enabled: boolean;
@@ -127,6 +128,11 @@ export default function BotPage() {
   const [error, setError] = useState<string | null>(null);
   const [demoSymbol, setDemoSymbol] = useState("BTC");
   const [demoSide, setDemoSide] = useState<"LONG" | "SHORT">("LONG");
+  const [v2h4Fingerprint, setV2h4Fingerprint] = useState<string | null>(null);
+
+  useEffect(() => {
+    void strategyFingerprint().then((h) => setV2h4Fingerprint(h.slice(0, 12)));
+  }, []);
 
   useEffect(() => {
     if (data.data?.config && !form) {
@@ -359,7 +365,16 @@ export default function BotPage() {
                       <div className="col-span-2 rounded-lg border border-accent/30 bg-accent/10 p-2 text-xs text-muted">
                         📘 Stratégie du livre : elle calcule elle-même son <b>stop-loss</b> et son <b>take-profit</b>
                         {" "}(Fibonacci : SL 88,6/113 %, TP ext. 127,2 % ; Big Bounce/BHG/Divergence : SL sous le niveau, TP résistance/≈2R ; V2-H4 Or : SL 1,5×ATR, TP 3R).
-                        {form.strategy === "V2H4_GOLD" && " Choisis le timeframe 15m (or, XAU/USD) pour qu'elle ait assez d'historique H4."}
+                        {form.strategy === "V2H4_GOLD" && (
+                          <>
+                            {" "}Choisis le timeframe 15m (or, XAU/USD) pour qu'elle ait assez d'historique H4.
+                            {v2h4Fingerprint && (
+                              <>
+                                {" "}<span className="font-mono text-faint">empreinte #{v2h4Fingerprint}</span>
+                              </>
+                            )}
+                          </>
+                        )}
                         Les champs « Stop (%) » et « R/R » sont alors ignorés.
                       </div>
                     )}
