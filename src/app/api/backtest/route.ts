@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { env } from "@/lib/env";
 import { backtestRunSchema } from "@/lib/validation";
 import { getMarketDataProvider } from "@/services/market";
-import { runBacktest } from "@/services/backtest/engine";
+import { runSplitBacktest } from "@/services/backtest/engine";
 
 export async function GET() {
   const auth = await authUserId();
@@ -31,7 +31,12 @@ export async function POST(req: Request) {
     const candles = await provider.getCandles(d.symbol, d.timeframe, d.limit);
     if (candles.length < 30) return fail("Not enough candles to backtest", 422);
 
-    const result = runBacktest(candles, {
+    // Split backtest (Phase 2B): full period + in-sample/out-of-sample halves,
+    // plus a bootstrap confidence interval on the full period's expectancy.
+    // `result` keeps the exact same top-level shape (strategy/metrics/trades/
+    // equityCurve) any existing caller reads — inSample/outOfSample/splitRatio
+    // are additive.
+    const result = runSplitBacktest(candles, {
       strategy: d.strategy,
       startingCapital: d.startingCapital,
       feeBps,

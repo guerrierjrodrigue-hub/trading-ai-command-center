@@ -79,6 +79,13 @@ export interface BacktestMetrics {
   sharpe: number; // annualized, from per-bar equity returns
   sortino: number; // annualized, downside deviation only
   cagr: number; // compound annual growth rate (%)
+  // Phase 2B — bootstrap confidence interval on expectancy (full period only).
+  // Present only when computed via runSplitBacktest.
+  expectancyCILow?: number; // 2.5th percentile of the resampled mean P&L/trade
+  expectancyCIHigh?: number; // 97.5th percentile
+  expectancyProbPositive?: number; // P(mean P&L/trade > 0), 0..1
+  bootstrapResamples?: number; // B
+  bootstrapSeed?: number; // seeded RNG seed (reproducible)
 }
 
 export interface BacktestResult {
@@ -86,6 +93,11 @@ export interface BacktestResult {
   metrics: BacktestMetrics;
   trades: BacktestTrade[];
   equityCurve: { time: number; equity: number }[];
+  // Phase 2B — in-sample / out-of-sample split. Present only when computed
+  // via runSplitBacktest (the plain runBacktest() keeps its original shape).
+  inSample?: BacktestMetrics;
+  outOfSample?: BacktestMetrics;
+  splitRatio?: number;
 }
 
 /**
@@ -390,4 +402,126 @@ function medianBarSeconds(candles: Candle[]): number {
   for (let i = 1; i < candles.length; i++) diffs.push(candles[i].time - candles[i - 1].time);
   diffs.sort((a, b) => a - b);
   return diffs[Math.floor(diffs.length / 2)] || 0;
+}
+
+// ---------------------------------------------------------------------------
+// Phase 2B — honesty additions: in-sample/out-of-sample split + a bootstrap
+// confidence interval on expectancy. Purely additive: runBacktest/
+// runBookBacktest/computeMetrics above are untouched, so every existing
+// caller keeps its exact current behavior.
+// ---------------------------------------------------------------------------
+
+/**
+ * Splits a candle series at `ratio` (default 0.70): the first `ratio` share
+ * is the in-sample (learning) window, the rest is out-of-sample (test). Each
+ * side is later backtested independently — its indicators warm up on its OWN
+ * data only, with no leakage from the other side. That is deliberate: it is
+ * what makes the OOS numbers an honest read of "would this still have worked
+ * on data the setup wasn't tuned/eyeballed on."
+ */
+export function splitCandles(
+  candles: Candle[],
+  ratio = 0.7,
+): { inSample: Candle[]; outOfSample: Candle[]; splitIndex: number } {
+  const splitIndex = Math.floor(candles.length * ratio);
+  return {
+    inSample: candles.slice(0, splitIndex),
+    outOfSample: candles.slice(splitIndex),
+    splitIndex,
+  };
+}
+
+/**
+ * mulberry32 — a small, fast, seeded PRNG. Used (instead of Math.random) so
+ * the bootstrap below is reproducible: the same trades + seed always give the
+ * same confidence interval.
+ */
+function mulberry32(seed: number): () => number {
+  let a = seed >>> 0;
+  return function random() {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+export const DEFAULT_BOOTSTRAP_RESAMPLES = 2000;
+export const DEFAULT_BOOTSTRAP_SEED = 42;
+
+export interface BootstrapResult {
+  meanLow: number; // 2.5th percentile of the resampled mean
+  meanHigh: number; // 97.5th percentile of the resampled mean
+  probabilityPositive: number; // share of resamples with mean > 0, 0..1
+  resamples: number;
+  seed: number;
+}
+
+/**
+ * Bootstrap confidence interval on the mean P&L per trade (expectancy):
+ * resamples the trade P&Ls WITH REPLACEMENT `resamples` times, computes the
+ * mean of each resample, and reports the [2.5th, 97.5th] percentile band plus
+ * the share of resamples with a positive mean. If that band straddles 0, the
+ * edge isn't statistically established from this sample. Seeded (mulberry32)
+ * so the result is exactly reproducible for the same trades.
+ */
+export function bootstrapExpectancy(
+  pnls: number[],
+  resamples = DEFAULT_BOOTSTRAP_RESAMPLES,
+  seed = DEFAULT_BOOTSTRAP_SEED,
+): BootstrapResult {
+  const n = pnls.length;
+  if (n === 0) {
+    return { meanLow: 0, meanHigh: 0, probabilityPositive: 0, resamples, seed };
+  }
+  const rand = mulberry32(seed);
+  const means = new Array<number>(resamples);
+  let positive = 0;
+  for (let b = 0; b < resamples; b++) {
+    let sum = 0;
+    for (let i = 0; i < n; i++) sum += pnls[Math.floor(rand() * n)];
+    const mean = sum / n;
+    means[b] = mean;
+    if (mean > 0) positive++;
+  }
+  means.sort((a, b) => a - b);
+  const percentile = (p: number) => means[Math.min(resamples - 1, Math.max(0, Math.round(p * (resamples - 1))))];
+  return {
+    meanLow: round(percentile(0.025), 2),
+    meanHigh: round(percentile(0.975), 2),
+    probabilityPositive: round(positive / resamples, 4),
+    resamples,
+    seed,
+  };
+}
+
+/**
+ * The "honest" backtest: runs the full period AND the in-sample / out-of-
+ * sample halves independently (each with its own indicator warm-up — no
+ * look-ahead across the split), then attaches a bootstrap confidence
+ * interval on expectancy to the FULL period's metrics. The returned shape is
+ * exactly a BacktestResult (same `metrics`/`trades`/`equityCurve` any
+ * existing caller of runBacktest() already reads), with inSample/
+ * outOfSample/splitRatio added on top.
+ */
+export function runSplitBacktest(candles: Candle[], p: BacktestParams, splitRatio = 0.7): BacktestResult {
+  const { inSample: isCandles, outOfSample: oosCandles } = splitCandles(candles, splitRatio);
+
+  const full = runBacktest(candles, p);
+  const inSample = runBacktest(isCandles, p);
+  const outOfSample = runBacktest(oosCandles, p);
+
+  const boot = bootstrapExpectancy(full.trades.map((t) => t.pnl));
+  full.metrics.expectancyCILow = boot.meanLow;
+  full.metrics.expectancyCIHigh = boot.meanHigh;
+  full.metrics.expectancyProbPositive = boot.probabilityPositive;
+  full.metrics.bootstrapResamples = boot.resamples;
+  full.metrics.bootstrapSeed = boot.seed;
+
+  return {
+    ...full,
+    inSample: inSample.metrics,
+    outOfSample: outOfSample.metrics,
+    splitRatio,
+  };
 }

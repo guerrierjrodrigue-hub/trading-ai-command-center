@@ -174,6 +174,67 @@ export default function BacktestingPage() {
             <Stat label="Pire série de pertes" value={`${m.worstLossStreak}`} hint={`CAGR ${formatPct(m.cagr)}`} />
           </div>
 
+          {m && result?.inSample && result?.outOfSample && (
+            <Card>
+              <SectionTitle
+                title="Apprentissage vs Test (in-sample / out-of-sample)"
+                subtitle="La fenêtre est coupée en deux et backtestée séparément — chaque moitié calcule ses propres indicateurs, sans fuite de l'une vers l'autre."
+              />
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="text-left text-xs uppercase tracking-wide text-faint">
+                    <tr>
+                      <th className="pb-2">Segment</th>
+                      <th className="pb-2 text-right">Espérance / trade</th>
+                      <th className="pb-2 text-right">Profit factor</th>
+                      <th className="pb-2 text-right">Trades</th>
+                    </tr>
+                  </thead>
+                  <tbody className="tnum">
+                    <tr className="border-t border-border">
+                      <td className="py-2 text-muted">Apprentissage ({Math.round((result.splitRatio ?? 0.7) * 100)}% du début)</td>
+                      <td className={cn("py-2 text-right font-medium", result.inSample.expectancy >= 0 ? "text-pos" : "text-neg")}>
+                        {formatCurrency(result.inSample.expectancy)}
+                      </td>
+                      <td className="py-2 text-right">{result.inSample.profitFactor}</td>
+                      <td className="py-2 text-right text-muted">{result.inSample.totalTrades}</td>
+                    </tr>
+                    <tr className="border-t border-border">
+                      <td className="py-2 text-muted">Test ({Math.round((1 - (result.splitRatio ?? 0.7)) * 100)}% de la fin, jamais vu)</td>
+                      <td className={cn("py-2 text-right font-medium", result.outOfSample.expectancy >= 0 ? "text-pos" : "text-neg")}>
+                        {formatCurrency(result.outOfSample.expectancy)}
+                      </td>
+                      <td className="py-2 text-right">{result.outOfSample.profitFactor}</td>
+                      <td className="py-2 text-right text-muted">{result.outOfSample.totalTrades}</td>
+                    </tr>
+                    <tr className="border-t border-border">
+                      <td className="py-2 font-medium text-white">Complet</td>
+                      <td className={cn("py-2 text-right font-medium", m.expectancy >= 0 ? "text-pos" : "text-neg")}>
+                        {formatCurrency(m.expectancy)}
+                      </td>
+                      <td className="py-2 text-right">{m.profitFactor}</td>
+                      <td className="py-2 text-right text-muted">{m.totalTrades}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {m.expectancyCILow != null && m.expectancyCIHigh != null && (
+                <div className="mt-4 rounded-lg border border-border bg-bg-hover p-3 text-sm">
+                  <div className="font-medium text-white">
+                    Espérance (période complète) : {formatCurrency(m.expectancy)} — intervalle de confiance 95 % [{formatCurrency(m.expectancyCILow)}, {formatCurrency(m.expectancyCIHigh)}]
+                  </div>
+                  <div className="mt-1 text-xs text-faint">
+                    P(espérance &gt; 0) ≈ {Math.round((m.expectancyProbPositive ?? 0) * 100)}% sur {m.bootstrapResamples} tirages bootstrap (graine {m.bootstrapSeed}).
+                  </div>
+                  <div className="mt-2 text-xs text-muted">
+                    Si la marge d'erreur de l'espérance inclut 0, l'avantage n'est pas prouvé statistiquement.
+                  </div>
+                </div>
+              )}
+            </Card>
+          )}
+
           <Card>
             <SectionTitle
               title="Courbe de capital"
