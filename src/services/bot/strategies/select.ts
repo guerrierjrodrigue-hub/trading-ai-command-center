@@ -5,9 +5,10 @@ import { evaluate as fib } from "./fibonacci";
 import { evaluate as bigBounce } from "./bigBounce";
 import { evaluate as breakHookGo } from "./breakHookGo";
 import { evaluate as divergence } from "./divergence";
+import { evaluate as v2h4Gold } from "./v2h4-gold";
 
 /** The book strategies the autonomous bot chooses among. */
-export const BOOK_STRATEGIES = [fib, bigBounce, breakHookGo, divergence] as const;
+export const BOOK_STRATEGIES = [fib, bigBounce, breakHookGo, divergence, v2h4Gold] as const;
 
 /** Evaluates every book strategy on an asset (LONG setups). */
 export function evaluateAll(candles: Candle[]): StrategyEval[] {

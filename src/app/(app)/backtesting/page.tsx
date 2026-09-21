@@ -18,6 +18,7 @@ const STRATEGIES: { value: StrategyType; label: string; hint: string }[] = [
   { value: "BIG_BOUNCE", label: "📘 Big Bounce (livre)", hint: "Rejet sur confluence de support · SL/TP du livre" },
   { value: "BREAK_HOOK_GO", label: "📘 Break-Hook-Go (livre)", hint: "Cassure + retest qui tient · SL/TP du livre" },
   { value: "DIVERGENCE", label: "📘 Divergence (livre)", hint: "Divergence haussière confirmée · SL/TP du livre" },
+  { value: "V2H4_GOLD", label: "📘 V2-H4 Or (Donchian 55 H4)", hint: "Cassure Donchian 55 sur H4 (agrégé depuis M15, or) · SL 1,5×ATR · TP 3R" },
 ];
 
 export default function BacktestingPage() {

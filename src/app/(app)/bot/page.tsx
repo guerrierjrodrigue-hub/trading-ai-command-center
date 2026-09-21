@@ -102,8 +102,9 @@ const STRATEGIES = [
   "BIG_BOUNCE",
   "BREAK_HOOK_GO",
   "DIVERGENCE",
+  "V2H4_GOLD",
 ];
-const TIMEFRAMES = ["1h", "4h", "1D", "1W"];
+const TIMEFRAMES = ["15m", "1h", "4h", "1D", "1W"];
 
 const actionTone: Record<string, "pos" | "neg" | "warn" | "cyan" | "neutral"> = {
   OPEN: "pos",
@@ -354,10 +355,11 @@ export default function BotPage() {
                       <label className="label">Actifs (vide = ta watchlist)</label>
                       <input className="input" value={symbolsText} onChange={(e) => setSymbolsText(e.target.value)} placeholder="ex. BTC, ETH, SOL" />
                     </div>
-                    {["FIB_CONFLUENCE", "BIG_BOUNCE", "BREAK_HOOK_GO", "DIVERGENCE"].includes(form.strategy) && (
+                    {["FIB_CONFLUENCE", "BIG_BOUNCE", "BREAK_HOOK_GO", "DIVERGENCE", "V2H4_GOLD"].includes(form.strategy) && (
                       <div className="col-span-2 rounded-lg border border-accent/30 bg-accent/10 p-2 text-xs text-muted">
                         📘 Stratégie du livre : elle calcule elle-même son <b>stop-loss</b> et son <b>take-profit</b>
-                        {" "}(Fibonacci : SL 88,6/113 %, TP ext. 127,2 % ; Big Bounce/BHG/Divergence : SL sous le niveau, TP résistance/≈2R).
+                        {" "}(Fibonacci : SL 88,6/113 %, TP ext. 127,2 % ; Big Bounce/BHG/Divergence : SL sous le niveau, TP résistance/≈2R ; V2-H4 Or : SL 1,5×ATR, TP 3R).
+                        {form.strategy === "V2H4_GOLD" && " Choisis le timeframe 15m (or, XAU/USD) pour qu'elle ait assez d'historique H4."}
                         Les champs « Stop (%) » et « R/R » sont alors ignorés.
                       </div>
                     )}

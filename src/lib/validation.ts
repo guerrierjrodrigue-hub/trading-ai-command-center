@@ -103,6 +103,7 @@ export const backtestRunSchema = z.object({
     "BIG_BOUNCE",
     "BREAK_HOOK_GO",
     "DIVERGENCE",
+    "V2H4_GOLD",
   ]),
   startingCapital: z.number().positive().default(10000),
   limit: z.number().int().min(50).max(1000).default(300),
@@ -147,6 +148,7 @@ export const botConfigSchema = z.object({
       "BIG_BOUNCE",
       "BREAK_HOOK_GO",
       "DIVERGENCE",
+      "V2H4_GOLD",
     ])
     .optional(),
   timeframe: timeframeSchema.optional(),

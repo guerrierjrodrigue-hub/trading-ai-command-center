@@ -5,6 +5,7 @@ import { evaluate as fibEval } from "@/services/bot/strategies/fibonacci";
 import { evaluate as bigBounceEval } from "@/services/bot/strategies/bigBounce";
 import { evaluate as breakHookGoEval } from "@/services/bot/strategies/breakHookGo";
 import { evaluate as divergenceEval } from "@/services/bot/strategies/divergence";
+import { evaluate as v2h4GoldEval } from "@/services/bot/strategies/v2h4-gold";
 import type { StrategyEval } from "@/services/bot/strategies/types";
 
 /**
@@ -22,14 +23,16 @@ export type StrategyType =
   | "FIB_CONFLUENCE"
   | "BIG_BOUNCE"
   | "BREAK_HOOK_GO"
-  | "DIVERGENCE";
+  | "DIVERGENCE"
+  | "V2H4_GOLD";
 
-/** The four "book" strategies are event-based (enter on a setup, exit at their own SL/TP). */
+/** The "book" strategies are event-based (enter on a setup, exit at their own SL/TP). */
 const BOOK_EVALUATORS: Partial<Record<StrategyType, (candles: Candle[]) => StrategyEval>> = {
   FIB_CONFLUENCE: fibEval,
   BIG_BOUNCE: bigBounceEval,
   BREAK_HOOK_GO: breakHookGoEval,
   DIVERGENCE: divergenceEval,
+  V2H4_GOLD: v2h4GoldEval,
 };
 
 export interface BacktestParams {

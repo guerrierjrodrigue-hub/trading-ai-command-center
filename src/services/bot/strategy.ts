@@ -4,6 +4,7 @@ import { analyzeFib } from "./strategies/fibonacci";
 import { evaluate as evalBigBounce } from "./strategies/bigBounce";
 import { evaluate as evalBreakHookGo } from "./strategies/breakHookGo";
 import { evaluate as evalDivergence } from "./strategies/divergence";
+import { evaluate as evalV2H4Gold } from "./strategies/v2h4-gold";
 import type { StrategyName } from "./strategies/types";
 
 export type BotStrategy = StrategyName;
@@ -70,6 +71,10 @@ export function longSignal(candles: Candle[], strategy: BotStrategy): BotSignal 
     }
     case "DIVERGENCE": {
       const e = evalDivergence(candles);
+      return { long: e.long, reason: e.reason, stop: e.stop, takeProfit: e.takeProfit };
+    }
+    case "V2H4_GOLD": {
+      const e = evalV2H4Gold(candles);
       return { long: e.long, reason: e.reason, stop: e.stop, takeProfit: e.takeProfit };
     }
     default:

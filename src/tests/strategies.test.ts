@@ -92,7 +92,7 @@ describe("selectBest", () => {
     const last = closes.length - 1;
     const c = mk(closes, { [last]: { open: 150.2, high: 151.3, low: 149.7 } });
     const all = evaluateAll(c);
-    expect(all.length).toBe(4);
+    expect(all.length).toBe(5); // FIB_CONFLUENCE, BIG_BOUNCE, BREAK_HOOK_GO, DIVERGENCE, V2H4_GOLD
     const best = selectBest(c, 55);
     expect(best).not.toBeNull();
     if (best) {

@@ -10,7 +10,8 @@ export type StrategyName =
   | "FIB_CONFLUENCE"
   | "BIG_BOUNCE"
   | "BREAK_HOOK_GO"
-  | "DIVERGENCE";
+  | "DIVERGENCE"
+  | "V2H4_GOLD";
 
 /**
  * Uniform result every strategy returns. `quality` (0..100) lets the autonomous

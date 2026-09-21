@@ -72,7 +72,7 @@ export interface RegimePolicy {
   note: string;
 }
 
-const ALL_BOOK: readonly StrategyName[] = ["FIB_CONFLUENCE", "BIG_BOUNCE", "BREAK_HOOK_GO", "DIVERGENCE"];
+const ALL_BOOK: readonly StrategyName[] = ["FIB_CONFLUENCE", "BIG_BOUNCE", "BREAK_HOOK_GO", "DIVERGENCE", "V2H4_GOLD"];
 
 /**
  * The Strategy Manager. Philosophy (revised): the regime INFORMS the decision —

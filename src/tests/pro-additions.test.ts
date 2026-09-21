@@ -48,7 +48,7 @@ describe("regimePolicy (Strategy Manager)", () => {
   it("otherwise allows both directions (regime informs the score, not a veto)", () => {
     for (const r of ["TRENDING_BULL", "TRENDING_BEAR", "RANGE", "LOW_VOL"] as const) {
       expect(regimePolicy(r)).toMatchObject({ blockEntries: false, allowLong: true, allowShort: true });
-      expect(regimePolicy(r).allowedStrategies.length).toBe(4);
+      expect(regimePolicy(r).allowedStrategies.length).toBe(5); // FIB_CONFLUENCE, BIG_BOUNCE, BREAK_HOOK_GO, DIVERGENCE, V2H4_GOLD
     }
   });
 });
