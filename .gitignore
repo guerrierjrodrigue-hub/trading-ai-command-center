@@ -12,3 +12,4 @@ coverage
 .vercel
 next-env.d.ts
 prisma/*.db
+/backups
