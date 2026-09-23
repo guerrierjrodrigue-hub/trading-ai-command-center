@@ -62,13 +62,18 @@ Sur **Windows** (PowerShell), place-toi où tu as enregistré la clé et tape
 (remplace le nom de la clé et l'IP) :
 
 ```
-ssh -i .\ta-cle.key ubuntu@TON-IP-PUBLIQUE
+ssh -i .\ta-cle.key opc@TON-IP-PUBLIQUE
 ```
+
+> L'utilisateur SSH dépend de l'image choisie à l'étape 2 : `opc` pour
+> *Oracle Linux* (image par défaut proposée par Oracle Cloud), `ubuntu`
+> seulement si tu as spécifiquement choisi une image *Canonical Ubuntu*.
 
 - Si Windows refuse la clé (« permissions too open »), tape d'abord :
   `icacls ta-cle.key /inheritance:r /grant:r "%USERNAME%:R"`
 - Réponds `yes` à la première connexion. Tu es maintenant **sur le
-  serveur** (l'invite devient `ubuntu@trading-robot`).
+  serveur** (l'invite devient `opc@trading-robot`, ou `ubuntu@trading-robot`
+  si tu as choisi une image Ubuntu).
 
 ## 5. Installer Docker et Git (sur le serveur)
 
