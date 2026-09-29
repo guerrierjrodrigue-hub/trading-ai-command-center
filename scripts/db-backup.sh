@@ -41,6 +41,23 @@ fi
 SIZE=$(du -h "$BACKUP_FILE" | cut -f1)
 log "OK: $(basename "$BACKUP_FILE") ($SIZE)"
 
+# Copie hors-serveur (Backblaze B2, remote rclone "b2backup"). Best-effort :
+# un echec ici ne doit ni supprimer le backup local ni faire echouer le
+# script (le local reste la source primaire) — d'ou le "||" qui absorbe le
+# code de sortie avant que "set -e" ne puisse agir dessus.
+if rclone copy "$BACKUP_FILE" "b2backup:rody-trading-backups/"; then
+  log "B2: copie OK ($(basename "$BACKUP_FILE"))"
+else
+  log "AVERTISSEMENT: copie B2 echouee (le backup local reste OK)"
+fi
+
+# Retention distante : purge sur B2 les objets vieux de plus de 30 jours.
+if rclone delete --min-age 30d "b2backup:rody-trading-backups/"; then
+  log "B2: retention distante OK (>30j purges)"
+else
+  log "AVERTISSEMENT: retention B2 echouee"
+fi
+
 # Rotation: ne garde que les $KEEP sauvegardes les plus recentes.
 cd "$BACKUP_DIR"
 ls -1 tacc-*.sql.gz 2>/dev/null | sort -r | tail -n "+$((KEEP + 1))" | while IFS= read -r old; do
