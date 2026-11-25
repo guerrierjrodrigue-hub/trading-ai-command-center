@@ -13,3 +13,6 @@ coverage
 next-env.d.ts
 prisma/*.db
 /backups
+/_explore
+/_audit-temp
+tsconfig.tsbuildinfo

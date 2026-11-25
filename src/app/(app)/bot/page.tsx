@@ -32,6 +32,7 @@ interface Profile {
   timeframe: string;
   maxDrawdownPct: number;
   trailPct: number;
+  maxHoldMinutes: number;
 }
 interface BotLog {
   id: string;
@@ -313,6 +314,7 @@ export default function BotPage() {
                         <option value="CONSERVATIVE">Prudent</option>
                         <option value="BALANCED">Équilibré</option>
                         <option value="AGGRESSIVE">Agressif</option>
+                        <option value="INTRADAY">Court terme (intraday)</option>
                       </select>
                     </div>
                     {(() => {
@@ -331,6 +333,12 @@ export default function BotPage() {
                             <span>Coupe-circuit (drawdown)</span><span className="text-right text-white">{prof.maxDrawdownPct}%</span>
                             <span>Stop suiveur (trailing)</span><span className="text-right text-white">{(prof.trailPct * 100).toFixed(0)}%</span>
                             <span>Timeframe</span><span className="text-right text-white">{prof.timeframe}</span>
+                            {prof.maxHoldMinutes > 0 ? (
+                              <>
+                                <span>Sortie sur le temps</span>
+                                <span className="text-right text-white">{prof.maxHoldMinutes} min</span>
+                              </>
+                            ) : null}
                           </div>
                           <div className="text-faint">Actifs choisis automatiquement par le scanner.</div>
                           <div className="text-faint">Stratégie choisie par actif parmi : Fibonacci, Big Bounce, Break-Hook-Go, Divergence — le robot retient le meilleur setup.</div>

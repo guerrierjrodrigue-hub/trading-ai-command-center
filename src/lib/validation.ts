@@ -138,7 +138,7 @@ export const brokerOrderSchema = z.object({
 export const botConfigSchema = z.object({
   enabled: z.boolean().optional(),
   mode: z.enum(["MANUAL", "AUTO"]).optional(),
-  riskProfile: z.enum(["CONSERVATIVE", "BALANCED", "AGGRESSIVE"]).optional(),
+  riskProfile: z.enum(["CONSERVATIVE", "BALANCED", "AGGRESSIVE", "INTRADAY"]).optional(),
   strategy: z
     .enum([
       "EMA_CROSS",

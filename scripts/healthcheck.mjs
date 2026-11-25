@@ -12,8 +12,12 @@
  */
 
 const BASE = process.env.HEALTHCHECK_URL || "http://localhost:3000";
-const EMAIL = process.env.HC_EMAIL || "demo@trading.ai";
-const PASSWORD = process.env.HC_PASSWORD || "demo1234";
+const EMAIL = process.env.HC_EMAIL || "";
+const PASSWORD = process.env.HC_PASSWORD || "";
+if (!EMAIL || !PASSWORD) {
+  console.error("Définis HC_EMAIL et HC_PASSWORD (ton compte admin) avant de lancer le healthcheck.");
+  process.exit(1);
+}
 
 const G = "\x1b[32m", R = "\x1b[31m", Y = "\x1b[33m", DIM = "\x1b[2m", X = "\x1b[0m";
 let cookie = "";

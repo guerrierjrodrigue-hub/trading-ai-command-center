@@ -1,6 +1,6 @@
 import { authUserId, fail, ok, parseBody } from "@/lib/api";
 import { brokerOrderSchema } from "@/lib/validation";
-import { getBrokerConnector } from "@/services/broker";
+import { getBrokerConnector, realTradingEnabled } from "@/services/broker";
 import {
   BrokerNotConfiguredError,
   BrokerTradingDisabledError,
@@ -30,6 +30,15 @@ export async function POST(req: Request) {
     return fail(
       "Ce courtier ne permet pas de passer des ordres ici. Utilise la page Paper Trading (simulateur interne).",
       400,
+    );
+  }
+  // Defense-in-depth gate at the route level: a LIVE (real-money) connector may
+  // only trade when the master switch is explicitly on. This covers every
+  // connector uniformly, even one whose own submitOrder forgets to check.
+  if (broker.capabilities().mode === "live" && !realTradingEnabled()) {
+    return fail(
+      "Exécution réelle désactivée (BROKER_TRADING_ENABLED=false). Aucun ordre réel n'est passé.",
+      403,
     );
   }
   try {

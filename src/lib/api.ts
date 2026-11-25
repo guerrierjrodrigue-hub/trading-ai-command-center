@@ -12,13 +12,27 @@ export function fail(message: string, status = 400, extra?: unknown): NextRespon
 
 /** Validates a request body against a Zod schema, returning typed data or a 400.
  * Generic over the schema so the parsed (output) type — with defaults applied — is inferred. */
+/** Hard cap on request-body size. API payloads here are tiny; this bounds a
+ * memory-exhaustion vector (e.g. oversized collections hitting Zod validation)
+ * before any parsing happens. */
+const MAX_BODY_BYTES = 100_000; // 100 KB
+
 export async function parseBody<S extends ZodTypeAny>(
   req: Request,
   schema: S,
 ): Promise<{ data: z.infer<S> } | { response: NextResponse }> {
+  let raw: string;
+  try {
+    raw = await req.text();
+  } catch {
+    return { response: fail("Invalid body") };
+  }
+  if (raw.length > MAX_BODY_BYTES) {
+    return { response: fail("Request body too large", 413) };
+  }
   let json: unknown;
   try {
-    json = await req.json();
+    json = raw ? JSON.parse(raw) : {};
   } catch {
     return { response: fail("Invalid JSON body") };
   }

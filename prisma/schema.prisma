@@ -383,6 +383,7 @@ model BotConfig {
   maxOpenPositions Int      @default(3)
   intervalMinutes  Int      @default(15)
   lastRunAt        DateTime?
+  lockRunUntil     DateTime?           // cross-process lease lock (anti double-cycle web/worker)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 }

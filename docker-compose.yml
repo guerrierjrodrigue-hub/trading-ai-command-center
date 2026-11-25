@@ -25,7 +25,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    environment:
+    # Shared env (&appenv) is reused by the worker below so the two stay in sync.
+    environment: &appenv
       NODE_ENV: production
       # Inside the compose network the DB host is the service name `db`.
       DATABASE_URL: postgresql://${POSTGRES_USER:-trading}:${POSTGRES_PASSWORD:-change_me_in_production}@db:5432/${POSTGRES_DB:-trading_ai}?schema=public
@@ -42,6 +43,8 @@ services:
       PAPER_STARTING_CAPITAL: ${PAPER_STARTING_CAPITAL:-10000}
       PAPER_FEE_BPS: ${PAPER_FEE_BPS:-10}
       APP_URL: ${APP_URL:-http://localhost:3000}
+      # How often (seconds) the bot scheduler wakes. Used by the worker.
+      BOT_TICK_SECONDS: ${BOT_TICK_SECONDS:-60}
       # Real stocks/ETF (Twelve Data)
       STOCKS_API_KEY: ${STOCKS_API_KEY:-}
       # Real forex + gold data (OANDA practice/demo account)
@@ -55,12 +58,27 @@ services:
       BROKER_API_SECRET: ${BROKER_API_SECRET:-}
       BROKER_BASE_URL: ${BROKER_BASE_URL:-}
       # Multi-user controls
-      ALLOW_REGISTRATION: ${ALLOW_REGISTRATION:-true}
+      ALLOW_REGISTRATION: ${ALLOW_REGISTRATION:-false}
       SIGNUP_INVITE_CODE: ${SIGNUP_INVITE_CODE:-}
       # Telegram notifications
       TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      # The bot runs in the `worker` service, not here. Set to "true" only to run
+      # it embedded in the web server instead (single-process fallback).
+      RUN_EMBEDDED_BOT: ${RUN_EMBEDDED_BOT:-false}
     ports:
       - "3000:3000"
+
+  # Chemin B : le robot tourne dans SON PROPRE processus, séparé du web.
+  # Même image, mais démarre le worker au lieu du serveur Next. Pas de port
+  # exposé. Partage la base `db` et le même environnement que `app`.
+  worker:
+    image: ghcr.io/guerrierjrodrigue-hub/trading-ai-command-center:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment: *appenv
+    command: ["npx", "tsx", "src/worker.ts"]
 
 volumes:
   pgdata:

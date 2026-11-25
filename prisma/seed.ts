@@ -12,6 +12,14 @@ const prisma = new PrismaClient();
 async function main() {
   console.log("Seeding database (asset catalog only, non-destructive)…");
 
+  // Fast path: skip the upsert loop entirely when the catalog is already in
+  // place. Keeps container startup quick (this runs on every boot).
+  const existing = await prisma.asset.count();
+  if (existing >= CATALOG.length) {
+    console.log(`Seed skipped — ${existing} assets already present.`);
+    return;
+  }
+
   for (const a of CATALOG) {
     await prisma.asset.upsert({
       where: { symbol: a.symbol },

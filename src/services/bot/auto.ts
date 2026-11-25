@@ -13,7 +13,7 @@ export const HIGHER_TF: Partial<Record<Timeframe, Timeframe>> = {
   "1m": "15m", "5m": "1h", "15m": "1h", "30m": "4h", "1h": "4h", "4h": "1D", "1D": "1W",
 };
 
-export type RiskProfileName = "CONSERVATIVE" | "BALANCED" | "AGGRESSIVE";
+export type RiskProfileName = "CONSERVATIVE" | "BALANCED" | "AGGRESSIVE" | "INTRADAY";
 
 export interface RiskProfile {
   label: string;
@@ -33,6 +33,7 @@ export interface RiskProfile {
   maxWeeklyLossPct: number; // halt new entries past this 7-day realized loss
   maxPerAssetExposurePct: number; // cap exposure to a single asset (% of equity)
   maxConsecutiveLosses: number; // pause new entries after this losing streak (anti-revenge)
+  maxHoldMinutes: number; // time-stop: close any position older than this (minutes); 0 = disabled
 }
 
 /** Circuit-breaker default used in MANUAL mode (AUTO uses the profile's value). */
@@ -46,6 +47,8 @@ export const DEFAULT_MIN_TRADE_SCORE = 70;
 export const DEFAULT_MAX_WEEKLY_LOSS_PCT = 8;
 export const DEFAULT_MAX_PER_ASSET_EXPOSURE_PCT = 25;
 export const DEFAULT_MAX_CONSECUTIVE_LOSSES = 4;
+/** Time-stop used in MANUAL mode. 0 = disabled (keeps the current swing behaviour). */
+export const DEFAULT_MAX_HOLD_MINUTES = 0;
 
 /**
  * Presets. The bot derives EVERYTHING from the chosen profile in AUTO mode:
@@ -71,6 +74,7 @@ export const RISK_PROFILES: Record<RiskProfileName, RiskProfile> = {
     maxWeeklyLossPct: 6,
     maxPerAssetExposurePct: 15,
     maxConsecutiveLosses: 3,
+    maxHoldMinutes: 0,
   },
   BALANCED: {
     label: "Équilibré",
@@ -90,6 +94,7 @@ export const RISK_PROFILES: Record<RiskProfileName, RiskProfile> = {
     maxWeeklyLossPct: 8,
     maxPerAssetExposurePct: 25,
     maxConsecutiveLosses: 4,
+    maxHoldMinutes: 0,
   },
   AGGRESSIVE: {
     label: "Agressif",
@@ -109,6 +114,31 @@ export const RISK_PROFILES: Record<RiskProfileName, RiskProfile> = {
     maxWeeklyLossPct: 12,
     maxPerAssetExposurePct: 35,
     maxConsecutiveLosses: 5,
+    maxHoldMinutes: 0,
+  },
+  // Court terme (intraday) : unité 15m, cibles serrées, seuils assouplis et —
+  // surtout — un time-stop qui ferme toute position au bout de ~8 h. Objectif :
+  // plusieurs trades par semaine qui se résolvent en minutes à quelques heures,
+  // jamais des positions qui traînent des jours/semaines. Crypto 24/7 en tête.
+  INTRADAY: {
+    label: "Court terme (intraday)",
+    riskPerTradePct: 1,
+    maxOpenPositions: 5,
+    maxExposurePct: 50,
+    entryScore: 58,
+    exitScore: 45,
+    atrMult: 1.2,
+    rr: 1.3,
+    timeframe: "15m",
+    avoidHighRisk: false,
+    fallbackStopPct: 1.5,
+    maxDrawdownPct: 12,
+    trailPct: 0.03,
+    minTradeScore: 60,
+    maxWeeklyLossPct: 8,
+    maxPerAssetExposurePct: 25,
+    maxConsecutiveLosses: 5,
+    maxHoldMinutes: 480,
   },
 };
 

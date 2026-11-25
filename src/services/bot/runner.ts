@@ -17,6 +17,7 @@ import {
   DEFAULT_MAX_WEEKLY_LOSS_PCT,
   DEFAULT_MAX_PER_ASSET_EXPOSURE_PCT,
   DEFAULT_MAX_CONSECUTIVE_LOSSES,
+  DEFAULT_MAX_HOLD_MINUTES,
   HIGHER_TF,
   autoPlan,
   type RiskProfileName,
@@ -27,6 +28,9 @@ import { partialDecision } from "./partial";
 
 /** In-process per-user run lock so scheduler + manual runs never overlap. */
 const running = new Set<string>();
+/** Cross-process lease duration (ms) for the DB lock below. A cycle far exceeding
+ * this would be abnormal; the lease then simply expires and the next run proceeds. */
+const LEASE_MS = 3 * 60 * 1000;
 
 async function log(userId: string, action: string, message: string, symbol?: string) {
   await prisma.botLog.create({ data: { userId, action, message, symbol: symbol ?? null } });
@@ -242,11 +246,14 @@ export async function openDemoTrade(
     update: {},
     create: { symbol: cat?.symbol ?? symbol, name: cat?.name ?? symbol, assetClass: cat?.assetClass ?? "CRYPTO", quoteCurrency: cat?.quoteCurrency ?? "USD", exchange: cat?.exchange },
   });
-  const position = await prisma.position.create({
-    data: { portfolioId: state.portfolioId, assetId: asset.id, side, status: "OPEN", quantity: plan.quantity, entryPrice: plan.entryPrice, stopLoss: stop, takeProfit: tp, feesPaid: plan.fee, openedBy: "BOT" },
+  // Atomic open (position + order + cash debit together).
+  await prisma.$transaction(async (tx) => {
+    const position = await tx.position.create({
+      data: { portfolioId: state.portfolioId, assetId: asset.id, side, status: "OPEN", quantity: plan.quantity, entryPrice: plan.entryPrice, stopLoss: stop, takeProfit: tp, feesPaid: plan.fee, openedBy: "BOT" },
+    });
+    await tx.order.create({ data: { portfolioId: state.portfolioId, assetId: asset.id, positionId: position.id, side: openSide, type: "MARKET", status: "FILLED", quantity: plan.quantity, price: plan.entryPrice, fee: plan.fee, reason: "BOT open BOT:DEMO" } });
+    await tx.portfolio.update({ where: { id: state.portfolioId }, data: { cash: plan.cashAfter } });
   });
-  await prisma.order.create({ data: { portfolioId: state.portfolioId, assetId: asset.id, positionId: position.id, side: openSide, type: "MARKET", status: "FILLED", quantity: plan.quantity, price: plan.entryPrice, fee: plan.fee, reason: "BOT open BOT:DEMO" } });
-  await prisma.portfolio.update({ where: { id: state.portfolioId }, data: { cash: plan.cashAfter } });
 
   const verb = side === "LONG" ? "achat" : "vente à découvert";
   await log(userId, "OPEN", `🧪 DÉMO — ${symbol} : ${verb} ${plan.quantity} @ ${plan.entryPrice} · stop ${stop} · TP ${tp} (trade de démonstration forcé)`, symbol);
@@ -268,12 +275,35 @@ export async function openDemoTrade(
  * the second call is ignored instead of double-trading.
  */
 export async function runBotCycle(userId: string): Promise<BotCycleResult> {
+  // Fast in-process guard (same process: scheduler tick vs manual run).
   if (running.has(userId)) {
     return { ran: false, opened: 0, closed: 0, message: "cycle déjà en cours — ignoré" };
   }
   running.add(userId);
   try {
-    return await runBotCycleInner(userId);
+    // Cross-process lease lock: with the bot in its own worker process AND a
+    // manual "run now" possible from the web server, the in-process Set is not
+    // enough. We atomically claim the lease in the DB; if another process holds
+    // a live lease, we skip. The lease auto-expires so a crash can't wedge it.
+    const now = new Date();
+    const leaseUntil = new Date(now.getTime() + LEASE_MS);
+    // Raw SQL on purpose: claims the lease atomically without depending on the
+    // generated Prisma types for this column (added by `prisma db push`).
+    const claimed = await prisma.$executeRaw`
+      UPDATE "BotConfig"
+      SET "lockRunUntil" = ${leaseUntil}
+      WHERE "userId" = ${userId}
+        AND ("lockRunUntil" IS NULL OR "lockRunUntil" < ${now})`;
+    if (claimed === 0) {
+      return { ran: false, opened: 0, closed: 0, message: "cycle déjà en cours (autre process) — ignoré" };
+    }
+    try {
+      return await runBotCycleInner(userId);
+    } finally {
+      await prisma
+        .$executeRaw`UPDATE "BotConfig" SET "lockRunUntil" = NULL WHERE "userId" = ${userId}`
+        .catch(() => {});
+    }
   } finally {
     running.delete(userId);
   }
@@ -308,6 +338,7 @@ async function runBotCycleInner(userId: string): Promise<BotCycleResult> {
         maxWeeklyLossPct: profile.maxWeeklyLossPct,
         maxPerAssetExposurePct: profile.maxPerAssetExposurePct,
         maxConsecutiveLosses: profile.maxConsecutiveLosses,
+        maxHoldMinutes: profile.maxHoldMinutes,
       }
     : {
         riskPerTradePct: cfg.riskPerTradePct,
@@ -319,6 +350,7 @@ async function runBotCycleInner(userId: string): Promise<BotCycleResult> {
         maxWeeklyLossPct: DEFAULT_MAX_WEEKLY_LOSS_PCT,
         maxPerAssetExposurePct: DEFAULT_MAX_PER_ASSET_EXPOSURE_PCT,
         maxConsecutiveLosses: DEFAULT_MAX_CONSECUTIVE_LOSSES,
+        maxHoldMinutes: DEFAULT_MAX_HOLD_MINUTES,
       };
 
   // Risk-hardening signals (computed once): 7-day realized P&L and the current
@@ -359,13 +391,37 @@ async function runBotCycleInner(userId: string): Promise<BotCycleResult> {
 
   const held = await loadHeld(state.portfolioId);
 
+  // Prefetch every held-position quote in PARALLEL (was fetched one-by-one in
+  // the loop below, which made a cycle slow when several positions were open).
+  const heldSymbols = [...new Set(held.map((p) => p.asset.symbol))];
+  const prefetched = await Promise.all(
+    heldSymbols.map((s) =>
+      provider
+        .getQuote(s)
+        .then((q) => [s, q.price] as const)
+        .catch(() => [s, null] as const),
+    ),
+  );
+  const quoteBySymbol = new Map<string, number | null>(prefetched);
+
   // 1) Generic stop-loss / take-profit for every bot position.
   const survivors: PositionWithAsset[] = [];
   const priceCache = new Map<string, number>();
   for (const pos of held) {
-    const quote = await provider.getQuote(pos.asset.symbol).catch(() => null);
-    if (!quote) { survivors.push(pos); continue; }
+    const price = quoteBySymbol.get(pos.asset.symbol) ?? null;
+    if (price == null) { survivors.push(pos); continue; }
+    const quote = { price };
     priceCache.set(pos.asset.symbol, quote.price);
+
+    // Time-stop (intraday): never let a position linger past the profile's max
+    // holding time. Closes at market regardless of SL/TP. 0 = disabled (swing).
+    if (eff.maxHoldMinutes > 0) {
+      const ageMin = (Date.now() - pos.openedAt.getTime()) / 60000;
+      if (ageMin >= eff.maxHoldMinutes) {
+        await execClose(pos, quote.price, `sortie sur le temps (ouverte depuis ${Math.round(ageMin)} min ≥ ${eff.maxHoldMinutes} min)`);
+        continue;
+      }
+    }
 
     // Trailing stop: ratchet the stop in the safe direction as the trade
     // advances (up for a LONG, down for a SHORT) to protect profit.
@@ -548,11 +604,15 @@ async function runBotCycleInner(userId: string): Promise<BotCycleResult> {
     const emoji = cand.side === "LONG" ? "🟢" : "🔵";
     const plan = planOpen({ cash, side: openSide, quantity, price: cand.entry, feeBps });
     cash = plan.cashAfter;
-    const position = await prisma.position.create({
-      data: { portfolioId: state.portfolioId, assetId: asset.id, side: cand.side, status: "OPEN", quantity: plan.quantity, entryPrice: plan.entryPrice, stopLoss: cand.stop, takeProfit: cand.tp, feesPaid: plan.fee, openedBy: "BOT" },
+    // Atomic open: position + order + cash debit succeed or fail together, so a
+    // crash can never leave a position without its matching cash movement.
+    await prisma.$transaction(async (tx) => {
+      const position = await tx.position.create({
+        data: { portfolioId: state.portfolioId, assetId: asset.id, side: cand.side, status: "OPEN", quantity: plan.quantity, entryPrice: plan.entryPrice, stopLoss: cand.stop, takeProfit: cand.tp, feesPaid: plan.fee, openedBy: "BOT" },
+      });
+      await tx.order.create({ data: { portfolioId: state.portfolioId, assetId: asset.id, positionId: position.id, side: openSide, type: "MARKET", status: "FILLED", quantity: plan.quantity, price: plan.entryPrice, fee: plan.fee, reason: `BOT open BOT:${cand.strategy}` } });
+      await tx.portfolio.update({ where: { id: state.portfolioId }, data: { cash: plan.cashAfter } });
     });
-    await prisma.order.create({ data: { portfolioId: state.portfolioId, assetId: asset.id, positionId: position.id, side: openSide, type: "MARKET", status: "FILLED", quantity: plan.quantity, price: plan.entryPrice, fee: plan.fee, reason: `BOT open BOT:${cand.strategy}` } });
-    await prisma.portfolio.update({ where: { id: state.portfolioId }, data: { cash: plan.cashAfter } });
     await log(userId, "OPEN", `${cand.symbol} : ${verb} ${plan.quantity} @ ${plan.entryPrice} — ${cand.reason} · stop ${cand.stop} · TP ${cand.tp}${wasCapped ? " (taille ajustée au capital)" : ""}`, cand.symbol);
     await notifyUser(
       userId,
